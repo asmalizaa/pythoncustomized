@@ -405,4 +405,28 @@ Logical operators are used to combine conditional statements:
   <tr><td>not</td><td>Reverse the result, returns False if the result is true</td><td>not(x < 5 and x < 10)</td></tr>
 </table>
 
+**Python Membership Operators**
+
+Membership operators are used to test if a sequence is presented in an object:
+
+<table>
+  <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+  <tr><td>in</td><td>Returns True if a sequence with the specified value is present in the object</td><td>x in y</td></tr>
+  <tr><td>not in</td><td>Returns True if a sequence with the specified value is not present in the object	</td><td>x not in y</td></tr>
+</table>
+
+**Python Bitwise Operators**
+
+Bitwise operators are used to compare (binary) numbers:
+
+<table>
+  <tr><th>Operator</th><th>Name</th><th>Description<th>Example</th></tr>
+  <tr><td>&</td><td>AND</td><td>Sets each bit to 1 if both bits are 1</td><td>x & y</td></tr>
+  <tr><td>|</td><td>OR</td><td>Sets each bit to 1 if one of two bits is 1</td><td>x | y</td></tr>
+  <tr><td>^</td><td>XOR</td><td>Sets each bit to 1 if only one of two bits is 1</td><td>x ^ y</td></tr>
+  <tr><td>~</td><td>NOT</td><td>Inverts all the bits</td><td>~x</td></tr>
+  <tr><td><<</td><td>Zero fill left shift</td><td>Shift left by pushing zeros in from the right and let the leftmost bits fall off</td><td>x << 2</td></tr>
+  <tr><td>>></td><td>Signed right shift</td><td>Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off</td><td>x >> 2</td></tr>
+</table>
+
 ## 1.5 Perform input/output console operations
