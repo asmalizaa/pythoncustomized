@@ -91,6 +91,20 @@ The simple role of an interpreter is to translate the material into a target lan
 - Linking of files or generation of Machine Code is not required by Interpreter.
 - Execution of source statements one by one.
 </td></tr>
+<tr><td>The compiler saves the Machine Language in form of Machine Code on disks.</td><td>The Interpreter does not save the Machine Language.</td></tr>
+<tr><td>Compiled codes run faster than Interpreter.</td><td>Interpreted codes run slower than Compiler.</td></tr>
+<tr><td>Linking-Loading Model is the basic working model of the Compiler.</td><td>The Interpretation Model is the basic working model of the Interpreter.</td></tr>
+<tr><td>The compiler generates an output in the form of (.exe).</td><td>The interpreter does not generate any output.</td></tr>
+<tr><td>Any change in the source program after the compilation requires recompiling the entire code.</td><td>Any change in the source program during the translation does not require retranslation of the entire code.</td></tr>
+<tr><td>Errors are displayed in Compiler after Compiling together at the current time.</td><td>Errors are displayed in every single line.</td></tr>
+<tr><td>The compiler can see code upfront which helps in running the code faster because of performing Optimization.</td><td>The Interpreter works by line working of Code, that’s why Optimization is a little slower compared to Compilers.</td></tr>
+<tr><td>It does not require source code for later execution.</td><td>It requires source code for later execution.</td></tr>
+<tr><td>Execution of the program takes place only after the whole program is compiled.</td><td>Execution of the program happens after every line is checked or evaluated.</td></tr>
+<tr><td>Compilers more often take a large amount of time for analyzing the source code.</td><td>In comparison, Interpreters take less time for analyzing the source code.</td></tr>
+<tr><td>CPU utilization is more in the case of a Compiler.</td><td>CPU utilization is less in the case of a Interpreter.</td></tr>
+<tr><td>The use of Compilers mostly happens in Production Environment.</td><td>The use of Interpreters is mostly in Programming and Development Environments.</td></tr>
+<tr><td>Object code is permanently saved for future use.</td><td>No object code is saved for future use.</td></tr>
+<tr><td>C, C++, C#, etc are programming languages that are compiler-based.</td><td>Python, Ruby, Perl, SNOBOL, MATLAB, etc are programming languages that are interpreter-based.</td></tr>
 </table>
 
 ## Understand python's logic and structure
