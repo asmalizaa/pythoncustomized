@@ -109,6 +109,68 @@ The simple role of an interpreter is to translate the material into a target lan
 
 ## Understand python's logic and structure
 
+Reference: (https://www.baeldung.com/cs/lexicon-vs-syntax-vs-semantics)
+
+As for a natural language, programming languages use a set of words considered valid. Moreover, a programming language specifies rules of how to dispose of these words in a source code. In such a way, programming languages must be able to judge if the written code represents valid and logical statements.
+
+### Lexis, Syntax and Semantics
+
+A programming language lexicon, syntax, and semantics provide information for programmers on how to express and correctly execute multiple operations in their source codes.
+
+**Lexis**
+
+Lexis is from the Greek word lexis which means 'word'. Lexis is a term in the English language that refers to the words of a language. A family of other words are related to this base word:
+
+- Lexicology is the study of lexis (or lexical items).
+- Lexicon is a collection of words, a bit like a dictionary.
+- Lexicalisation is the process of adding or changing words in a lexicon.
+- A lexeme is a basic unit of word meaning, or the “root word”. For example, eats, ate, eaten, and eating come from one lexeme, eat.
+
+In short, a language lexicon includes the complete set of available terms. Practically, we can see the lexicon as a dictionary. This dictionary contains every word used and recognized by the language speakers.
+
+**Syntax**
+
+A language syntax, in turn, represents the possible ways that we can put words from the lexicon together. So, talking about syntax is talking about well-defined rules to create sentences in a given language.
+
+- It refers to the rules and regulations for writing any statement in a programming language like C/C++.
+- It does not have to do anything with the meaning of the statement.
+- A statement is syntactically valid if it follows all the rules.
+- It is related to the grammar and structure of the language.
+
+**Semantics**
+
+The semantics of a language, in turn, indicates if a sentence has a concrete representation for those who hear or read it.
+
+- It refers to the meaning associated with the statement in a programming language.
+- It is all about the meaning of the statement which interprets the program easily.
+- Errors are handled at runtime.
+
+### The Organization of Programming Languages
+
+Similar to natural languages, learning a programming language includes understanding its formal structures and organization.
+
+So, summarily, the lexicon of a programming language presents the reserved list of words adopted by it. These words, in turn, are what we use to code commands and create data structures.
+
+The words written by a programmer are known as lexemes. Lexemes, however, are matched with a predefined pattern and thus identified as a token of the programming language (we call this lexical analysis). Let’s see a simple pseudocode example:
+
+![image](https://github.com/asmalizaa/pythoncustomized/assets/23090837/4f7c40b7-6939-4d7a-a02e-0d2bf44b4f52)
+
+**Furthermore, we also have a specific lexicon related to a particular program (source code).** So, besides the standard reserved words list from the programming language, the program lexicon include other words exclusively defined for it, such as variable and function names.
+
+However, executing commands, creating data structures, and using generic coding resources typically demand not only one word but a bunch of them. **In such a way, the rules to correctly use the available words to achieve coding objectives form what we know as the programming language syntax.**
+
+If a programming statement is lexically and semantically valid, we can compile/interpret it. But, if it is not semantically valid, we can have unexpected or wrong behaviors during the program execution.
+
+In practice, the syntax analysis process a derivation tree with the tokens identified in the lexical analysis. Let’s see an example:
+
+![image](https://github.com/asmalizaa/pythoncustomized/assets/23090837/7cd800e2-4275-45dc-bee1-bdb60f88b9e7)
+
+**Semantics in a programming language indicates what practically does or not make sense in the context of a given source code.**
+
+Some usual semantic errors are, for example, using an uninitialized variable in arithmetic expressions or adding an operation immediately after a return operation in a function.
+
+It is important to note that the number and format of words and rules in the lexicon, syntax, and semantics can vary from one programming language to another. It depends on several technical aspects of these languages, such as being a language statically or dynamically typed.
+
 ## Introduce literals and variables into code and use different numeral systems
 
 ## Choose operators and data types adequate to the problem
