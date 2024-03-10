@@ -1,6 +1,6 @@
 # Python Programming - Customized
 
-1. Compiter Programming and Python
+1. [Compiter Programming and Python](https://github.com/asmalizaa/pythoncustomized/blob/main/Chapter1.md)
 2. Control Flow - Conditional Blocks and Loops
 3. Data Collections - Tuples, Dictionaries, Lists and Strings
 4. Functions and Exceptions
