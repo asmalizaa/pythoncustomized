@@ -313,4 +313,85 @@ x = 20.5  # float
 x = ["apple", "banana", "cherry"]  # list
 ```
 
+**Setting the Specific Data Type**
+
+If you want to specify the data type, you can use the following constructor functions:
+
+```python
+x = str("Hello World")
+x = int(20)
+x = float(20.5)
+x = list(("apple", "banana", "cherry"))
+```
+
+### Python Operators
+
+Operators are used to perform operations on variables and values.
+
+In the example below, we use the + operator to add together two values:
+
+```python
+print(10 + 5)
+```
+
+Python divides the operators in the following groups:
+
+- Arithmetic operators
+- Assignment operators
+- Comparison operators
+- Logical operators
+- Identity operators
+- Membership operators
+- Bitwise operators
+
+**Python Arithmetic Operators**
+
+Arithmetic operators are used with numeric values to perform common mathematical operations:
+
+<table>
+  <tr><th>Operator</th><th>Name</th><th>Example</th></tr>
+  <tr><td>+</td><td>Addition</td><td>x + y</td></tr>
+  <tr><td>-</td><td>Subtraction</td><td>x - y</td></tr>
+  <tr><td>*</td><td>Multiplication</td><td>x * y</td></tr>
+  <tr><td>/</td><td>Division</td><td>x / y</td></tr>
+  <tr><td>%</td><td>Modulus</td><td>x % y</td></tr>
+  <tr><td>**</td><td>Exponentiation</td><td>x ** y</td></tr>
+  <tr><td>//</td><td>Floor Division</td><td>x // y</td></tr>
+</table>
+
+**Python Assignment Operators**
+
+Assignment operators are used to assign values to variables:
+
+<table>
+  <tr><th>Operator</th><th>Example</th><th>Same As</th></tr>
+  <tr><td>=</td><td>x = 5</td><td>x = 5</td></tr>
+  <tr><td>+=</td><td>x += 3</td><td>x = x + 3</td></tr>
+  <tr><td>-=</td><td>x -= 3</td><td>x = x - 3</td></tr>
+  <tr><td>*=</td><td>x *= 3</td><td>x = x * 3</td></tr>
+  <tr><td>/=</td><td>x /= 3</td><td>x = x / 3</td></tr>
+  <tr><td>%=</td><td>x %= 3</td><td>x = x % 3</td></tr>
+  <tr><td>//=</td><td>x //= 3</td><td>x = x // 3</td></tr>
+  <tr><td>**=</td><td>x **= 3</td><td>x = x ** 3</td></tr>
+  <tr><td>&=</td><td>x &= 3</td><td>x = x & 3</td></tr>
+  <tr><td>|=</td><td>x |= 3</td><td>x = x | 3</td></tr>
+  <tr><td>^=</td><td>x ^= 3</td><td>x = x ^ 3</td></tr>
+  <tr><td>>>=</td><td>x >>= 3</td><td>x = x >> 3</td></tr>
+  <tr><td><<=</td><td>x <<= 3</td><td>x = x << 3</td></tr>
+</table>
+
+**Python Comparison Operators**
+
+Comparison operators are used to compare two values:
+
+<table>
+  <tr><th>Operator</th><th>Name</th><th>Example</th></tr>
+  <tr><td>==</td><td></td>Equal<td>x == y</td></tr>
+  <tr><td>!=</td><td></td>Not equal<td>x != y</td></tr>
+  <tr><td>></td><td></td>Greater than<td>x > y</td></tr>
+  <tr><td><</td><td></td>Less than<td>x < y</td></tr>
+  <tr><td>>=</td><td></td>Greater than or equal to<td>x >= y</td></tr>
+  <tr><td><=</td><td></td>Less than or equal to<td>x <= y</td></tr>
+</table>
+
 ## 1.5 Perform input/output console operations
