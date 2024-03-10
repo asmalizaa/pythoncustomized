@@ -107,13 +107,11 @@ The simple role of an interpreter is to translate the material into a target lan
 <tr><td>C, C++, C#, etc are programming languages that are compiler-based.</td><td>Python, Ruby, Perl, SNOBOL, MATLAB, etc are programming languages that are interpreter-based.</td></tr>
 </table>
 
-## Understand python's logic and structure
+### Lexis, Syntax and Semantics
 
 Reference: (https://www.baeldung.com/cs/lexicon-vs-syntax-vs-semantics)
 
 As for a natural language, programming languages use a set of words considered valid. Moreover, a programming language specifies rules of how to dispose of these words in a source code. In such a way, programming languages must be able to judge if the written code represents valid and logical statements.
-
-### Lexis, Syntax and Semantics
 
 A programming language lexicon, syntax, and semantics provide information for programmers on how to express and correctly execute multiple operations in their source codes.
 
@@ -170,6 +168,43 @@ In practice, the syntax analysis process a derivation tree with the tokens ident
 Some usual semantic errors are, for example, using an uninitialized variable in arithmetic expressions or adding an operation immediately after a return operation in a function.
 
 It is important to note that the number and format of words and rules in the lexicon, syntax, and semantics can vary from one programming language to another. It depends on several technical aspects of these languages, such as being a language statically or dynamically typed.
+
+## Understand python's logic and structure
+
+Reference: (https://www.programmingonlinehelp.com/understand-pythons-logic-and-structure/)
+
+Python, renowned for its readability and simplicity, captivates programmers with its logical structure. In this exploration, we’ll unravel the essence of Python’s logic and structure by dissecting keywords, understanding instructions, appreciating the significance of indentation, and acknowledging the role of comments.
+
+1. **Keywords: Unlocking Python’s Vocabulary**
+
+   - **Definition**: Keywords are reserved words in Python with predefined meanings. They form the backbone of Python’s syntax, shaping the logic and flow of the code.
+   - **Examples**: "if," "else," "for," "while," and "def."
+   - **Significance**: Keywords introduce structure and specificity to the code, guiding the interpreter on how to execute instructions.
+  
+2. **Instructions: Building the Script’s Narrative**
+
+   - **Definition**: Instructions in Python are individual lines or blocks of code that carry out specific operations. They dictate the sequence of actions performed by the program.
+   - **Examples**: Variable assignments, function calls, conditional statements, and loops.
+   - **Significance**: Instructions bring the script to life, executing tasks and achieving the desired outcomes based on the defined logic.
+
+3. **Indentation: The Silent Architect of Python Code**
+
+   - **Definition**: Indentation refers to the consistent use of whitespace (usually spaces or tabs) to structure code blocks. Unlike many programming languages that use braces, Python relies on indentation for readability and scope definition.
+   - **Examples**: Indentation is crucial in blocks like loops, conditionals, and function definitions.
+   - **Significance**: Indentation not only enforces clean and readable code but also determines the scope of statements, eliminating the need for explicit block delimiters.
+  
+4. **Comments: Adding Context to the Code**
+
+   - **Definition**: Comments in Python are annotations within the code that are ignored during execution. They provide explanatory notes, making the code more understandable for developers.
+   - **Examples**: Single-line comments using “#” and multi-line comments enclosed in triple quotes.
+   - **Significance**: Comments enhance code comprehension, serving as documentation for future reference or collaboration among developers.
+
+### Incorporating Logic and Structure in Python Code
+
+- **Guided by Keywords**: Utilize keywords to structure your code logically. "if" and "else" keywords guide the flow based on conditions, while "for" and "while" keywords control iteration.
+- **Following Instruction Flow**: Develop a clear sequence of instructions. Assign variables, call functions, and implement conditional statements and loops strategically to achieve the desired logic.
+- **Maintaining Indentation Precision**: Embrace consistent indentation to ensure clarity and accuracy. Let indentation define code blocks, aiding both human readability and correct execution.
+- **Clarifying with Comments**: Use comments judiciously to provide insights into the rationale behind code decisions. Explain complex sections or flag potential improvements to foster collaboration.
 
 ## Introduce literals and variables into code and use different numeral systems
 
