@@ -429,4 +429,39 @@ Bitwise operators are used to compare (binary) numbers:
   <tr><td>>></td><td>Signed right shift</td><td>Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off</td><td>x >> 2</td></tr>
 </table>
 
+**Operator Precedence**
+
+Operator precedence describes the order in which operations are performed. 
+
+```python
+print((6 + 3) - (6 + 3))
+print(100 + 5 * 3)
+```
+
+The precedence order is described in the table below, starting with the highest precedence at the top:
+
+<table>
+  <tr><th>Operator</th><th>Description</th></tr>
+  <tr><td>()</td><td>Parentheses</td></tr>
+  <tr><td>**</td><td>Exponentiation</td></tr>
+  <tr><td>+x -x ~x</td><td>Unary plus, unary minus, and bitwise NOT</td></tr>
+  <tr><td>* / // %</td><td>Multiplication, division, floor division, and modulus</td></tr>
+  <tr><td>+ -</td><td>Addition and subtraction</td></tr>
+  <tr><td><< >></td><td>Bitwise left and right shifts</td></tr>
+  <tr><td>&</td><td>Bitwise AND</td></tr>
+  <tr><td>^</td><td>Bitwise XOR</td></tr>
+  <tr><td>|</td><td>Bitwise OR</td></tr>
+  <tr><td>== != > >= < <= is is not in not in</td><td>Comparisons, identity, and membership operators	
+</td></tr>
+  <tr><td>not</td><td>Logical NOT</td></tr>
+  <tr><td>and</td><td>Logical AND</td></tr>
+  <tr><td>or</td><td>Logical OR</td></tr>
+</table>
+
+If two operators have the same precedence, the expression is evaluated from left to right.
+
+```python
+print(5 + 4 - 7 + 3)
+```
+
 ## 1.5 Perform input/output console operations
