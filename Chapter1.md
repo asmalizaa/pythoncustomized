@@ -386,12 +386,23 @@ Comparison operators are used to compare two values:
 
 <table>
   <tr><th>Operator</th><th>Name</th><th>Example</th></tr>
-  <tr><td>==</td><td></td>Equal<td>x == y</td></tr>
-  <tr><td>!=</td><td></td>Not equal<td>x != y</td></tr>
-  <tr><td>></td><td></td>Greater than<td>x > y</td></tr>
-  <tr><td><</td><td></td>Less than<td>x < y</td></tr>
-  <tr><td>>=</td><td></td>Greater than or equal to<td>x >= y</td></tr>
-  <tr><td><=</td><td></td>Less than or equal to<td>x <= y</td></tr>
+  <tr><td>==</td><td>Equal</td><td>x == y</td></tr>
+  <tr><td>!=</td><td>Not equal</td><td>x != y</td></tr>
+  <tr><td>></td><td>Greater than</td><td>x > y</td></tr>
+  <tr><td><</td><td>Less than</td><td>x < y</td></tr>
+  <tr><td>>=</td><td>Greater than or equal to</td><td>x >= y</td></tr>
+  <tr><td><=</td><td>Less than or equal to</td><td>x <= y</td></tr>
+</table>
+
+**Python Logical Operators**
+
+Logical operators are used to combine conditional statements:
+
+<table>
+  <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+  <tr><td>and</td><td>Returns True if both statements are true</td><td>x <5 and x < 10</td></tr>
+  <tr><td>or</td><td>Returns True if one of the statements is true</td><td>x < 5 or x < 4</td></tr>
+  <tr><td>not</td><td>Reverse the result, returns False if the result is true</td><td>not(x < 5 and x < 10)</td></tr>
 </table>
 
 ## 1.5 Perform input/output console operations
