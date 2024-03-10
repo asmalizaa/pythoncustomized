@@ -60,8 +60,7 @@ An Interpreter is a program that translates a programming language into a compre
 
 The simple role of an interpreter is to translate the material into a target language. An Interpreter works line by line on a code. It also converts high-level language to machine language.
 
-![image](https://github.com/asmalizaa/pythoncustomized/assets/23090837/0542ea02-9406-
-4f98-b9f2-56d68ab18655)
+![image](https://github.com/asmalizaa/pythoncustomized/assets/23090837/0542ea02-9406-4f98-b9f2-56d68ab18655)
 
 #### Advantages of Interpreter
 
@@ -78,17 +77,20 @@ The simple role of an interpreter is to translate the material into a target lan
 
 <table>
   <tr><th>Compiler</th><th>Interpreter</th></tr>
-  <tr><td>Steps of Programming:
+  <tr>
+    <td>Steps of Programming:
 
 - Program Creation.
 - Analysis of language by the compiler and throws errors in case of any incorrect statement.
 - In case of no error, the Compiler converts the source code to Machine Code.
 - Linking of various code files into a runnable program.
-- Finally runs a Program.</td><td>Steps of Programming:
+- Finally runs a Program.</td>
+ <td>Steps of Programming:
 
 - Program Creation.
-- Linking of files or generation of Machine Code is not required by Interpreter
-- Execution of source statements one by one.</td></tr>
+- Linking of files or generation of Machine Code is not required by Interpreter.
+- Execution of source statements one by one.
+</td></tr>
 </table>
 
 ## Understand python's logic and structure
