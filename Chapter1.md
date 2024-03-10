@@ -574,6 +574,8 @@ print("Studytonight","has","been","created","for", sep = " _ ", end=" _STUDENTS"
 
 **The int() and float() function**
 
+Reference: (https://medium.com/@onifadeay/understanding-pythons-int-and-float-functions-handling-numbers-and-strings-a04f724ee1d2)
+
 Two essential functions that assist in this endeavor are int() and float().
 
 - Converting Numbers to Integers
