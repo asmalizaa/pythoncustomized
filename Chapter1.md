@@ -465,3 +465,165 @@ print(5 + 4 - 7 + 3)
 ```
 
 ## 1.5 Perform input/output console operations
+
+### The print() and input() functions
+
+Let’s explore how to perform input and output operations in Python.
+
+**Reading Input From the Keyboard**
+
+To obtain data from the user via the keyboard, you can use the built-in function input(). It allows the user to type in a line of input, which is then returned as a string. Here’s how it works:
+
+```python
+# Example 1: Basic input
+user_input = input()
+print("You entered:", user_input)
+
+# Example 2: Input with a prompt
+name = input("What is your name? ")
+print("Hello,", name)
+
+# Example 3: Converting input to a numeric type
+number = int(input("Enter a number: "))
+print("Your number plus 100 is:", number + 100)
+```
+
+Remember that input() always returns a string. If you need a numeric type (like an integer), you can convert the string using int(), float(), or complex().
+
+**Displaying Output to the Console**
+
+To output text to the console, use the print() function. You can display strings, variables, or any other data you want. Here are some examples:
+
+```python
+# Example 4: Basic output
+print("Hello, world!")
+
+# Example 5: Output with variables
+name = "Alice"
+age = 30
+print(f"{name} is {age} years old.")
+
+# Example 6: Formatting output
+pi = 3.14159
+print(f"Approximate value of pi: {pi:.2f}")
+```
+
+In the last example, we use an f-string to format the output with two decimal places for the value of pi.
+
+### The sep= and end= keyword parameters
+
+Reference: (https://www.studytonight.com/post/the-sep-and-end-parameters-in-python-print-statement)
+
+The end parameter in Print is used to append any string at the end of the output of the print statement in python while the sep parameter is used to format the strings that need to be printed on the console and add a separator between strings.
+
+**The end parameter**
+
+The end parameter is used to append any string at the end of the output of the print statement in python.
+
+By default, the print the method ends with a new line. This means there is no need to explicitly specify the parameter end as '\n'. Programmers with a background in C/C++ may find this interesting.
+
+Let us look at how changing the value of the end parameter changes the contents of the print statement onscreen.
+
+The below example demonstrates that passing '\n' or not specifying the end parameter both yield the same result. Execute 2 lines of code at a time to see the result.
+
+```python
+print("Studytonight",)
+print("is awesome")
+
+print("Studytonight", end= "\n")
+print("is awesome")
+```
+
+On the other hand, passing the whitespace to the end parameter indicates that the end character has to be identified by whitespace and not a new line (which is the default).
+
+```python
+print("Studytonight", end=' ')
+print("is awesome")
+```
+
+The below example shows that any value can be passed to the end parameter and based on the content in the print statement, the end value gets displayed.
+
+```python
+print("Hi", end=' Studytonight ')
+print("you are awesome")
+```
+
+**The sep parameter**
+
+Sometimes, we may wish to print multiple values in a Python program in a readable manner. This is when the argument sep comes to play. The arguments passed to the program can be separated by different values. The default value for sep is whitespace. The sep parameter is primarily used to format the strings that need to be printed on the console and add a separator between strings to be printed. This feature was newly introduced in Python 3 version.
+
+The below example shows that passing the sep parameter as whitespace or not passing the sep at all doesn't make a difference. Execute every line of code to see the result.
+
+```python
+print("Study", "tonight")
+print("Study", "tonight", sep = ' ')
+```
+
+The below example shows different values that are passed to the sep parameter.
+
+```python
+print("Study", "tonight", sep = '')
+print("Study", "tonight", sep = ' & ')
+```
+
+The sep parameter, used in conjunction with the end parameter is generally used in production code to print data in a readable fashion.
+
+```python
+print("Studytonight","has","been","created","for", sep = " _ ", end=" _STUDENTS")
+```
+
+**The int() and float() function**
+
+Two essential functions that assist in this endeavor are int() and float().
+
+- Converting Numbers to Integers
+
+  The int() function in Python is primarily used to convert numerical values, such as integers and floats, to integers. It truncates any decimal portion, providing only the whole number. Here’s an example:
+
+  ```python
+  number = 7.9
+  integer_number = int(number)
+  print(integer_number) # Output: 7
+  ```
+
+  In this case, the float value 7.9 is converted to an integer, resulting in 7. The int() function is useful when you need to discard any decimal places and work solely with whole numbers.
+
+- Converting Numbers to Floats
+
+  Conversely, the float() function allows you to convert numerical values to floating-point numbers. This function is particularly handy when performing calculations that involve decimal values. Consider the following example:
+
+  ```python
+  number = 4
+  float_number = float(number)
+  print(float_number) # Output: 4.0
+  ```
+
+  In this example, the integer 4 is converted to a float, resulting in 4.0. This conversion ensures that the number retains its decimal precision, which is essential for accurate calculations involving fractions.
+
+- Converting Strings to Integers or Floats
+
+  Both int() and float() functions can also be used to convert strings representing numeric values into their corresponding data types. However, it is important to ensure that the string contains only valid numeric characters; otherwise, errors can occur. Consider the following examples:
+
+  ```python
+  number_str = "123"
+  integer_number = int(number_str)
+  print(integer_number) # Output: 123
+  float_str = "3.14"
+  float_number = float(float_str)
+  print(float_number) # Output: 3.14
+  ```
+
+  In the above code snippets, the strings 123 and 3.14 are successfully converted to integers and floats, respectively. This functionality becomes invaluable when working with user inputs provided as strings and needing to perform numerical computations.
+
+- The Decimal Number Pitfall
+
+  While the int() function can convert strings to integers and the float() function can handle floats, it’s important to note that int() cannot directly convert a string representation of a decimal number. For instance, attempting to convert the string 3.5 to an integer will result in a `ValueError`. Instead, you should use the float() function to convert the string to a float data type.
+
+  ```python
+  decimal_str = "3.5"
+  integer_number = int(decimal_str) # Raises ValueError
+  float_number = float(decimal_str)
+  print(float_number) # Output: 3.5
+  ```
+
+  In the above example, an attempt to use int() to convert the string 3.5 will raise a `ValueError` since the conversion from a decimal string to an integer is not valid. However, using float() successfully converts the string to a float, allowing for the accurate representation of the decimal value.
