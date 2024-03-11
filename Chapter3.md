@@ -2,16 +2,7 @@
 
 ## 3.1 Collect and process data using lists
 
-Lists are used to store multiple items in a single variable.
-
-Lists are one of 4 built-in data types in Python used to store collections of data, the other 3 are Tuple, Set, and Dictionary, all with different qualities and usage.
-
-Lists are created using square brackets.
-
-```python
-# This assigns a three-element list to x
-x = [1, 2, 3]
-```
+List is an ordered collection (sequence) of values, defined using comma-separated values in a pair of square brackets. List in python is mutable (it can be modified - add, update, delete).
 
 - List items are ordered, changeable, and allow duplicate values.
 - List items are indexed, the first item has index [0], the second item has index [1] etc.
@@ -157,8 +148,219 @@ for row in matrix:
 print(odd_numbers)
 ```
 
+Sorting list.
+
+```python
+# in-place sorting (change the list)
+x = [3, 8, 4, 0, 2, 1]
+x.sort()
+
+# make copy then sort
+x = [2, 4, 1, 3]
+y = x[:]
+y.sort()
+
+# strings
+x = ["Life", "Is", "Enchanting"]
+x.sort()
+
+# list of list
+x = [[3, 5], [2, 9], [2, 3], [4, 1], [3, 2]]
+x.sort()
+print(x)
+
+# sort by the second element
+x.sort(key=lambda x : x[1])
+print(x)
+
+# sorted
+x = (4, 3, 1, 2)
+y = sorted(x)
+
+z = sorted(x, reverse=True)
+```
+
 ## 3.2 Collect and process data using tuples
+
+Tuple is very similar to list, that is a sequence of comma-separated values defined in a pair of brackets. Tuple is immutable i.e. it cannot be modified (readonly).
+
+```python
+# start with a list, and then convert to tuple using python builtin function
+nums = [1, 2, 3, 4, 5]
+nums_tup = tuple(nums)
+
+# display the data
+print("nums: {}, type: {}, size: {}".format(nums, type(nums), len(nums)))
+print("nums_tup: {}, type: {}, size: {}".format(nums_tup, type(nums_tup), len(nums_tup)))
+```
+
+```python
+# define a tuple using a pair of brackets
+days = ('monday', 'tuesday', 'wednesday', 'thursday', 'friday')
+print("days: {}, type: {}, size: {}".format(days, type(days), len(days)))
+
+# read a single value from tuple
+print('first value in days: {}'.format(days[0]))
+print('last value in days: {}'.format(days[-1]))
+
+# tuple is immutable - cannot update value
+# days[0] = 'sunday'  # TypeError
+
+# but you can reassign tuple
+days = days + days
+print("days: {}, type: {}, size: {}".format(days, type(days), len(days)))
+
+# initialization/reassignment
+days = days * 2
+print("days: {}, type: {}, size: {}".format(days, type(days), len(days)))
+
+# count the occurences/frequencies
+print("'monday' appeared {} times in days".format(days.count('monday')))
+
+# check index of value in tuple
+first_friday_index = days.index('friday')
+print("the first 'friday' occured at position {}".format(first_friday_index))
+
+# how to sort values in tuple?
+# 1. convert to list
+days_list = list(days)
+print("\ndays_list: {}, type: {}, size: {}".format(days_list, type(days_list), len(days_list)))
+
+# 2. sort the list
+days_list.sort()
+print("\ndays_list: {}, type: {}, size: {}".format(days_list, type(days_list), len(days_list)))
+
+# 3. convert back to tuple
+days = tuple(days_list)
+print("\ndays: {}, type: {}, size: {}".format(days, type(days), len(days)))
+```
+
+```python
+days = ('monday', 'tuesday', 'wednesday', 'thursday', 'friday')
+days = days * 2
+print("\ndays: {}, type: {}, size: {}".format(days, type(days), len(days)))
+
+# can do slicing on tuple
+days_sliced = days[ : 7]
+print("\ndays_sliced: {}, type: {}, size: {}".format(days_sliced, type(days_sliced), len(days_sliced)))
+
+# python builtin functions min() and max()
+print("\nmin value: {}".format(min(days_sliced)))
+print("max value: {}\n".format(max(days_sliced)))
+
+# in operator - to check if value is existed
+print('monday' in days_sliced)
+print('sunday' in days_sliced)
+
+# not operator
+print('monday' not in days_sliced)
+print('sunday' not in days_sliced)
+```
+
+```python
+# quick check
+# how to sort values in tuple
+
+cats = ("Snow", "Stitch", "Chewy", "Luke", "Han")
+cats_sorted = sorted(cats)
+print(cats)
+print(cats_sorted)
+```
 
 ## 3.3 Collect and process data using dictionaries
 
+Dictionary is an ordered collection of key-value pairs, defined within a pair of curly-brackets {}. Key can be anything ie. numbers, string, object etc. Key must be unique and point to one value. Dictionary is mutable.
+
+```python
+# define a dictionary
+myusers = { 'carl' : 40, 'alan' : 40, 'bob' : 38, 'danny' : 39 }
+print(myusers)
+
+# check the type and length
+print("type: {}".format(type(myusers)))
+print("length: {}".format(len(myusers)))
+
+# retrieve a value from dictionary - using the key
+print('value for {} is {}'.format('carl', myusers['carl']))
+print('value for {} is {}'.format('bob', myusers['bob']))
+
+# add new pair
+myusers['james'] = 41
+print(myusers)
+
+# try add new pair using existing key
+myusers['james'] = 29
+print(myusers)
+
+# get value by key
+# print('value for {} is {}'.format('bob', myusers['bobs']))  # KeyError
+
+# use get() instead
+result = myusers.get('bobs', 'Not found')
+print(result)
+
+result = myusers.get('bob', 'Not found')
+print(result)
+
+# create a shallow copy
+myusers_copy = myusers.copy()
+
+# remove pair from dictionary
+del myusers_copy['bob']
+print("myusers_copy: {}".format(myusers_copy))
+print("myusers: {}".format(myusers))
+
+# clear dictionary
+myusers.clear()
+print("myusers: {}".format(myusers))
+```
+
+Other operations on dictionary
+- keys() : return all keys in dictionary
+- values() : return all values in dictionary
+- items() : return all pair of key-value in dictionary
+- in operator : to check for existence
+
+```python
+myusers = { 'carl' : 40, 'alan' : 40, 'bob' : 38, 'danny' : 39 }
+print(myusers)
+
+# add new pair to dictionary
+myusers['james'] = 37
+
+# keys() example
+thekeys = myusers.keys()
+print(thekeys)
+
+# try access the first key
+# 1. convert dict_key to list using python builtin function list()
+keylist = list(thekeys)
+# 2. use index to access individual key
+print("first key: {}".format(keylist[0]))
+
+# check if key is existed, if yes then do nothing, else add new key-value pair
+if 'james' not in keylist :
+    myusers['james'] = 27
+print(myusers)
+```
+
+### Activity
+
+1. Display value pointed to by the third key.
+
+   ```python
+   myusers = { 'carl' : 40, 'alan' : 40, 'bob' : 38, 'danny' : 39 }
+   ```
+
+2. Find the key for value '99'
+
+   ```python
+   myresults = { 'Java' : 100, 'Python' : 99, 'Perl' : 98, 'PHP' : 97 }
+   ```
+
+3. Write a program to do word counting.
+
+   ```python
+   sample_string = "To be or not to be"
+   ```
 ## 3.4 Operate with strings
