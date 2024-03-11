@@ -186,8 +186,8 @@ greetuser("John")
 greetuser("Bob")
 ```
 
-> Hello, good morning John!
-> Hello, good morning Bob!
+> Hello, good morning John! <br/>
+> Hello, good morning Bob! <br/>
 
 ```python
 # function that calculate factorial
@@ -204,8 +204,8 @@ print("factorial of {} is {}".format(3, fact(3)))
 print("factorial of {} is {}".format(4, fact(4)))
 ```
 
-> factorial of 3 is 6
-> factorial of 4 is 24
+> factorial of 3 is 6 <br/>
+> factorial of 4 is 24 <br/>
 
 ```python
 # function that takes 2 parameters
@@ -220,8 +220,8 @@ print("{} to the power of {} is {}".format(2, 3, power(2, 3)))
 print("{} to the power of {} is {}".format(3, 3, power(3, 3)))
 ```
 
-> 2 to the power of 3 is 8
-> 3 to the power of 3 is 27
+> 2 to the power of 3 is 8 <br/>
+> 3 to the power of 3 is 27 <br/>
 
 ```python
 # define function that takes 3 parameters
@@ -236,11 +236,11 @@ display("Bob", "bob@example.com")
 display("Sarah")
 ```
 
-> Name: John, Email: john@example.com, Message: Good morning!
-> Name: John, Email: john@example.com, Message: Hello World!
-> Name: Bob, Email: bob@example.com, Message: Today is a good day
-> Name: Bob, Email: bob@example.com, Message: Hello World!
-> Name: Sarah, Email: user@example.com, Message: Hello World!
+> Name: John, Email: john@example.com, Message: Good morning! <br/>
+> Name: John, Email: john@example.com, Message: Hello World! <br/>
+> Name: Bob, Email: bob@example.com, Message: Today is a good day <br/>
+> Name: Bob, Email: bob@example.com, Message: Hello World! <br/>
+> Name: Sarah, Email: user@example.com, Message: Hello World! <br/>
 
 ```python
 # define another function that takes 3 parameters: string, integer, boolean
@@ -260,18 +260,18 @@ getinformation(flag=False, name="alan", number=9)
 getinformation("william", 18)
 ```
 
-> name: david
-> number x 2: 24
-> flag: True
-> name: david
-> number x 2: 24
-> flag: True
-> name: alan
-> number x 2: 18
-> flag: False
-> name: william
-> number x 2: 36
-> flag: False
+> name: david <br/>
+> number x 2: 24 <br/>
+> flag: True <br/>
+> name: david <br/>
+> number x 2: 24 <br/>
+> flag: True <br/>
+> name: alan <br/>
+> number x 2: 18 <br/>
+> flag: False <br/>
+> name: william <br/>
+> number x 2: 36 <br/>
+> flag: False <br/>
 
 ```python
 # function with default parameters
@@ -287,13 +287,13 @@ fun1(c=100)
 fun1(b=200)
 ```
 
-> a: 1 b: 2 c: 3
-> a: 6 b: 2 c: 3
-> a: 6 b: 7 c: 3
-> a: 6 b: 7 c: 8
-> a: 10 b: 2 c: 30
-> a: 1 b: 2 c: 100
-> a: 1 b: 200 c: 3
+> a: 1 b: 2 c: 3 <br/>
+> a: 6 b: 2 c: 3 <br/>
+> a: 6 b: 7 c: 3 <br/>
+> a: 6 b: 7 c: 8 <br/>
+> a: 10 b: 2 c: 30 <br/>
+> a: 1 b: 2 c: 100 <br/>
+> a: 1 b: 200 c: 3 <br/>
 
 ```python
 # print() takes variable number of arguments
@@ -304,12 +304,12 @@ print("hello")
 print("hello", 100, True)
 print()
 ```
-
-> 1
-> 1 2
-> 1 2 3 4 5
-> hello
-> hello 100 True
+ 
+> 1 <br/>
+> 1 2 <br/>
+> 1 2 3 4 5 <br/>
+> hello <br/>
+> hello 100 True <br/>
 
 **Function that takes a variable number of arguments**
 
@@ -338,16 +338,16 @@ calculate("hello", 10, 20)
 calculate("hello", 10, "world", 20, True)
 ```
 
-> total: 1
-> total: 3
-> total: 18
-> no parameters
-> hello
-> total: 30
-> hello
-> world
-> True
-> total: 30
+> total: 1 <br/>
+> total: 3 <br/>
+> total: 18 <br/>
+> no parameters <br/>
+> hello <br/>
+> total: 30 <br/>
+> hello <br/>
+> world <br/>
+> True <br/>
+> total: 30 <br/>
 
 ```python
 # the first 2 parameters are required
@@ -361,12 +361,12 @@ fun2(1, "alan")
 fun2(1, 2, 3, 4, 5)
 ```
 
-> 1
-> alan
-> ()
-> 1
-> 2
-> (3, 4, 5)
+> 1 <br/>
+> alan <br/>
+> () <br/>
+> 1 <br/>
+> 2 <br/>
+> (3, 4, 5) <br/>
 
 Indefinite number of arguments.
 
@@ -386,12 +386,12 @@ example_fun(1, 2, foo = 3, bar = 4)
 example_fun(5, 6, a = 1, b = 2, c = 3, d = 4)
 ```
 
-> 1 2 {'foo': 3, 'bar': 4}
-> x: 1, y: 2, keys in 'other': ['foo', 'bar']
-> The total of values in other is 7
-> 5 6 {'a': 1, 'b': 2, 'c': 3, 'd': 4}
-> x: 5, y: 6, keys in 'other': ['a', 'b', 'c', 'd']
-> The total of values in other is 10
+> 1 2 {'foo': 3, 'bar': 4} <br/>
+> x: 1, y: 2, keys in 'other': ['foo', 'bar'] <br/>
+> The total of values in other is 7 <br/>
+> 5 6 {'a': 1, 'b': 2, 'c': 3, 'd': 4} <br/>
+> x: 5, y: 6, keys in 'other': ['a', 'b', 'c', 'd'] <br/>
+> The total of values in other is 10 <br/>
 
 Mutable objects as arguments.
 
@@ -413,8 +413,8 @@ fun3(x, y, z)
 print("after: x = {} y = {} z = {}".format(x, y, z))
 ```
 
-> before: x = 5 y = [1, 2] z = [10, 20]
-> after: x = 5 y = [1, 2, 3] z = [10, 20]
+> before: x = 5 y = [1, 2] z = [10, 20] <br/>
+> after: x = 5 y = [1, 2, 3] z = [10, 20] <br/>
 
 **Function as parameter**
 
@@ -431,8 +431,8 @@ print("{}F is {:.3f}K".format(100, f_to_k(100)))
 print("{}C is {:.3f}K".format(27, c_to_k(27)))
 ```
 
-> 100F is 310.928K
-> 27C is 300.150K
+> 100F is 310.928K <br/>
+> 27C is 300.150K <br/>
 
 ```python
 # assign function to variable
@@ -447,8 +447,8 @@ result = fun_ctok(28)
 print("result: {:.3f}".format(result))
 ```
 
-> result: 338.706
-> result: 301.150
+> result: 338.706 <br/>
+> result: 301.150 <br/>
 
 ```python
 # place the variables in a list or tuple or dictionary
@@ -460,9 +460,9 @@ print("{:.3f}".format(temp_converter['ftok'](150)))
 print("{:.3f}".format(temp_converter['ctok'](28)))
 ```
 
-> {'ftok': <function f_to_k at 0x0000019642412CA0>, 'ctok': <function c_to_k at 0x0000019642412D40>}
-> 338.706
-> 301.150
+> {'ftok': <function f_to_k at 0x0000019642412CA0>, 'ctok': <function c_to_k at 0x0000019642412D40>} <br/>
+> 338.706 <br/>
+> 301.150 <br/>
 
 **Lambda Expressions**
 
@@ -480,8 +480,8 @@ print("{:.3f}".format(temp_converter_lambda['ftoklambda'](150)))
 print("{:.3f}".format(temp_converter_lambda['ctoklambda'](28)))
 ```
 
-> 338.706
-> 301.150
+> 338.706 <br/>
+> 301.150 <br/>
 
 **Variable Scopes**
 
@@ -502,10 +502,10 @@ showemail()
 print(email)    # get global
 ```
 
-> john@example.com
-> john@example.com
-> bob@example.com
-> john@example.com
+> john@example.com <br/>
+> john@example.com <br/>
+> bob@example.com <br/>
+> john@example.com <br/>
 
 ```python
 name = "john"
@@ -520,9 +520,9 @@ showname(name)
 print(name)
 ```
 
-> john
-> bob
-> john
+> john <br/>
+> bob <br/>
+> john <br/>
 
 ```python
 title = "python"
@@ -539,11 +539,11 @@ showtitle()
 print(title)    # value updated
 ```
 
-> python
-> python
-> java
-> java
-
+> python <br/>
+> python <br/>
+> java <br/>
+> java <br/>
+ 
 
 ## 4.3  Python Built-In Exceptions Hierarchy
 
