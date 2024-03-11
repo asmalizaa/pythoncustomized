@@ -628,6 +628,8 @@ print("{0:&>10} is the food of gods".format('Ambrosia'))
 
 ### ## Formatting Strings with %
 
+Reference: (https://stackabuse.com/python-string-interpolation-with-the-percent-operator/)
+
 ```python
 print("%s is the %s of %s" % ("Ambrosia", "food", "the gods"))
 
