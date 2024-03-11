@@ -261,12 +261,39 @@ When delving into code, incorporating literals and variables is essential. Under
 - In the cosmic realm of an "if" statement, your code block springs to life if the condition is "True"; otherwise, it gracefully glides into the "else" block.
 - Booleans are the unsung heroes behind logical operations, empowering you to craft dynamic and responsive programs that adapt seamlessly to changing scenarios.
 
+```python
+# define a boolean variable
+x = True
+print(x, type(x))   # output: True <class 'bool'>
+
+# assign string value 'True' to x
+x = "True"
+print(x, type(x))   # output: True <class 'str'>
+```
+
 ### Integers and Floating-Point Numbers: The Building Blocks of Mathematics
 
 - Now, let’s explore the numerical wonders of Python – integers and floating-point numbers.
 - Integers, those trusty whole numbers without decimals, provide a precise way to quantify quantities in your code.
 - On the flip side, floating-point numbers bring flexibility to the table, gracefully accommodating decimals and even scientific notation.
 - Whether you’re tallying apples or navigating complex mathematical models, Python’s knack for handling integers and floating-point numbers empowers you to tackle a wide array of challenges with numerical finesse.
+
+```python
+# define variables to store integer and floating-point number
+number = 10
+print(number, type(number)) # output: 10 <class 'int'>
+
+price = 10.99
+print(price, type(price))   # output: 10.99 <class 'float'>
+
+# convert/cast float to int
+result = int(price)
+print(result, type(result)) # output: 10 <class 'int'>
+
+# cast int to float
+result = float(result)
+print(result, type(result)) # output: 10.0 <class 'float'>
+```
 
 ### Scientific Notation: Bridging the Macro and Microcosms
 
@@ -275,11 +302,82 @@ When delving into code, incorporating literals and variables is essential. Under
 - This capability proves to be a game-changer in scientific and engineering applications, where precision and readability take center stage.
 - Python’s embrace of scientific notation not only elevates the clarity of your code but also simplifies the communication of complex numerical values, making your computations both accessible and comprehensible.
 
+```python
+# scientific notation
+value = "{:e}".format(0.000001234)
+print(value)    # output: 1.234000e-06
+print(value, type(value))   # output: 1.234000e-06 <class 'str'>
+```
+
 ### Strings: The Poetic Verses of Code
 
 - Strings, the eloquent storytellers in Python’s repertoire, are sequences of characters enclosed in quotes.
 - Whether you’re dealing with text, manipulating user inputs, or constructing intricate narratives within your code, strings provide the canvas for expression.
 - Python’s versatility with strings extends to various operations, such as concatenation, slicing, and formatting, making them a cornerstone for representing textual information in a dynamic and engaging manner.
+
+```python
+# format string output
+firstname = "John"
+lastname = "Smith"
+
+# output: John Smith
+print(firstname, lastname)  
+
+# use string format, all these will output: John Smith
+print("{} {}".format(firstname, lastname))      
+print("{0} {1}".format(firstname, lastname))
+print("{1} {0}".format(firstname, lastname))
+print("{} {}".format(123, 456))     # output: 123 456
+```
+
+```python
+name = "John Smith"
+age = 20
+
+# all of these will output Name: John Smith Age: 20
+print("Name: " + name + " Age: " + str(age))
+print("Name:", name, "Age:", age)
+print("Name: {} Age: {}".format(name, age))
+print("Name: %s Age: %s" % (name, age))
+```
+
+```python
+# string in python can be defined using both single and double quotes
+first = 'hello world'
+second = "hello world"
+
+print(first, type(first))   # output: hello world <class 'str'>
+print(second, type(second)) # output: hello world <class 'str'>
+
+message = 'John says "Hello World!"'
+print(message)  # output: John says "Hello World!"
+
+message = "John says 'Hello World!'"
+print(message)  # output: John says 'Hello World!'
+```
+
+```python
+# tripple single-quotes and double-quotes
+msg = '''
+Dear John, 
+
+    How are you?
+
+Jane
+'''
+print(msg)
+
+John = "test"
+
+msg = """
+Dear John, 
+
+    How are you?
+
+Jane
+"""
+print(msg)
+```
 
 ### Numeral Systems: Unraveling the Digits
 
