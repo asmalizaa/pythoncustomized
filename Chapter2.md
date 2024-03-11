@@ -9,8 +9,7 @@ In computer programming, the if statement is a conditional statement. It is used
 An if statement executes a block of code only if the specified condition is met.
 
 **Syntax** <br/>
-if condition: <br/>
-    # body of if statement
+![image](https://github.com/asmalizaa/pythoncustomized/assets/23090837/84fc8381-c2e6-4ee7-b437-7224a361d897)
 
 Here, if the condition of the if statement is:
 - True - the body of the if statement executes.
