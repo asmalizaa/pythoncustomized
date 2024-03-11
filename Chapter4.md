@@ -29,10 +29,9 @@ def getmessage(user) :
     return "Hello, good morning {}!".format(user)
 
 getmessage("John")
-
----
-'Hello, good morning John!'
 ```
+
+'Hello, good morning John!'
 
 **Python None Keyword**
 
@@ -44,10 +43,9 @@ Python None is the function returns when there are no return statements.
 def check_return():
 	pass
 print(check_return())
-
----
-None
 ```
+
+None
 
 Declaring a variable as None.
 
