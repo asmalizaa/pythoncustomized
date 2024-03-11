@@ -99,17 +99,17 @@ for i in range(n_terms):
 	print(recursive_fibonacci(i))
 ```
 
-> Fibonacci series:
-> 0
-> 1
-> 1
-> 2
-> 3
-> 5
-> 8
-> 13
-> 21
-> 34
+> Fibonacci series: <br/>
+> 0 <br/>
+> 1 <br/>
+> 1 <br/>
+> 2 <br/>
+> 3 <br/>
+> 5 <br/>
+> 8 <br/>
+> 13 <br/>
+> 21 <br/>
+> 34 <br/>
 
 ## 4.2 Organize interaction between the function and its environment
 
