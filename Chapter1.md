@@ -107,6 +107,47 @@ The simple role of an interpreter is to translate the material into a target lan
 <tr><td>C, C++, C#, etc are programming languages that are compiler-based.</td><td>Python, Ruby, Perl, SNOBOL, MATLAB, etc are programming languages that are interpreter-based.</td></tr>
 </table>
 
+## Activity: Hello World Program
+
+```python
+# display "Hello World!" to output
+print("Hello World!")
+print("Hello World!")
+print("Hello World!")
+```
+
+```python
+# this program declares a variable x that store a number
+x = 7
+print(x + 10)   # display 17
+```
+
+```python
+x = 10
+
+# check the data type using builtin function type()
+print(type(x))  # output: <class 'int'>
+
+# use concatenator + to append and 
+# use builtin function str() to convert int to str
+print("Number x is " + str(x))  # output: Number x is 10
+```
+
+```python
+# store string value 10 to x then check the type
+x = "10"
+print(type(x))  # output: <class 'str'>
+
+# convert string x to integer
+x = int(x)
+print(type(x))  # output: <class 'int'>
+```
+
+```python
+# set the 'end' property of print function
+print("hello", end="--")    # output: hello--world
+```
+
 ### Lexis, Syntax and Semantics
 
 Reference: (https://www.baeldung.com/cs/lexicon-vs-syntax-vs-semantics)
