@@ -547,4 +547,42 @@ print(title)    # value updated
 
 ## 4.3  Python Built-In Exceptions Hierarchy
 
+Reference: (https://docs.python.org/3/library/exceptions.html) <br/>
+Reference: (https://blog.airbrake.io/blog/python/class-hierarchy)
+
+- In Python, all exceptions must be instances of a class that derives from BaseException.
+- In a try statement with an except clause that mentions a particular class, that clause also handles any exception classes derived from that class (but not exception classes from which it is derived).
+- Two exception classes that are not related via subclassing are never equivalent, even if they have the same name.
+
+**BaseException**
+
+The BaseException class is, as the name suggests, the base class for all built-in exceptions in Python. Typically, this exception is never raised on its own, and should instead be inherited by other, lesser exception classes that can be raised.
+
+The BaseException class (and, thus, all subclass exceptions as well) allows a tuple of arguments to be passed when creating a new instance of the class. In most cases, a single argument will be passed to an exception, which is a string value indicating the specific error message.
+
+This class also includes a with_traceback(tb) method, which explicitly sets the new traceback information to the tb argument that was passed to it.
+
+**Exception**
+
+
+Exception is the most commonly-inherited exception type (outside of the true base class of BaseException). In addition, all exception classes that are considered errors are subclasses of the Exception class. In general, any custom exception class you create in your own code should inherit from Exception.
+
+The Exception class contains many direct child subclasses that handle most Python errors, so we'll briefly go over each below:
+
+- ArithmeticError - The base class for the variety of arithmetic errors, such as when attempting to divide by zero, or when an arithmetic result would be too large for Python to accurately represent.
+- AssertionError - This error is raised when a call to the [assert] statement fails.
+- LookupError - The base class for the exceptions that are raised when a key or index used on a mapping or sequence is invalid: IndexError, KeyError. This can be raised directly by codecs.lookup().
+- IndexError - Raised when a sequence subscript is out of range. (Slice indices are silently truncated to fall in the allowed range; if an index is not an integer, TypeError is raised.)
+- KeyError - Raised when a mapping (dictionary) key is not found in the set of existing keys.
+- TypeError = Raised when an operation or function is applied to an object of inappropriate type. The associated value is a string giving details about the type mismatch.
+- Raised when an operation or function receives an argument that has the right type but an inappropriate value, and the situation is not described by a more precise exception such as IndexError.
+
+**SystemExit**
+
+Finally, the SystemExit exception is raised when calling the sys.exit() method, which explicitly closes down the executing script and exits Python. Since this is an exception, it can be rescued and programmatically responded to immediately before the script actually shuts down.
+
+**KeyboardInterrupt**
+
+This simple exception is raised when the user presses a key combination that causes an interrupt to the executing script. For example, many terminals accept Ctrl+C as an interrupt keystroke.
+
 ## 4.4 Basics of Python Exception Handling
