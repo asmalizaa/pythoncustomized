@@ -364,3 +364,296 @@ print(myusers)
    sample_string = "To be or not to be"
    ```
 ## 3.4 Operate with strings
+
+```python
+x = "Hello, World"
+
+# extract the first character in x
+print(x[0])
+print(x[-1])    # the last character 
+print(x[-3])
+print(x[3])
+
+# slicing - extract a subset of string
+# syntax: strvarname[start_index:stop_index]
+print(x[1:7])
+print(x[:-1])
+```
+
+```python
+# get the size/length of string including the spaces and special characters (\n, \t, etc)
+# python builtin function len()
+x = "Goodbye\n"
+print(x)
+print(x)
+
+size = len(x)
+print("size : {}".format(size))
+
+x = "Goodbye"
+size = len(x)
+print("size : {}".format(size))
+```
+
+```python
+# concatenate string values
+x = "Hello " + "World"
+print(x)
+
+name = "John"
+age = 20
+
+# if non-string, then convert to string first
+# python builtin function str()
+print("Student " + name + " is " + str(age) + " years old.")
+
+# repetition
+print(name * 10)
+print("-" * 20)
+```
+
+```python
+# define strings using single and double quotes
+str1 = 'A string can be defined using single quotes'
+str2 = "A string can also be defined using double quotes"
+
+# to display single or double quotes within string, use escape character
+str3 = 'This string contains \'single-quotes\' characters'
+str4 = "This string contains 'single-quotes' characters"
+str5 = "This string contains \"double-quotes\" characters"
+str6 = 'This string contains "double-quotes" characters'
+
+print(str1)
+print(str2)
+print(str3)
+print(str4)
+print(str5)
+print(str6)
+```
+
+```python
+# use triple single or double quotes to define strings
+str7 = '''Hello everyone! 
+
+    Good morning...'''
+str8 = 'Hello everyone!\n\n\tGood morning...'
+
+print(str7)
+print(str8)
+
+str9 = """
+Dear John,
+    How are you doing? Hope to catch up soon.
+
+    Sarah.
+"""
+str10 = "Dear John,\n\tHow are you doing? Hope to catch up soon.\n\n\tSarah."
+
+print(str9)
+print(str10)
+```
+
+### String Builtin Functions
+
+- format() : format the string output
+- lower() : convert string to lowercase
+- upper() : convert everything to uppercase
+- replace() : characters replacement
+- find() : search from LHS (start)
+- rfind() : search from RHS (end)
+- strip() : remove trailing whitespaces from both LHS and RHS
+- rstrip() : remove trailing whitespaces from RHS
+- lstrip() : remove trailing whitespaces from LHS
+- ljust() : left-justified (left-aligned)
+- rjust() : right-justified (right-aligned)
+- split() : tokenize string values, return an array of words
+- join() : combine all string values, return a single string
+
+```python
+text = "The cat in the hat"
+
+# split
+items = text.split()
+
+# use format to display results
+print("text before split: {}".format(text))
+print("text after split: {}".format(items))
+
+# display individual token/item 
+print("first item: {}".format(items[0]))
+print("second item: {}".format(items[1]))
+print("last item: {}".format(items[-1]))
+
+# use len() to get the number of items
+size = len(items)
+print("there are {} items".format(size))
+
+# join the items (token) by + character (delimiter)
+result = '+'.join(items)
+print("result after join: {}".format(result))
+
+result = '-'.join([items[1], items[4]])
+print("result after join: {}".format(result))
+```
+
+```python
+text = "The cat in the hat"
+
+# split
+items = text.split()
+
+# use format to display results
+print("text before split: {}".format(text))
+print("text after split: {}".format(items))
+
+# display individual token/item 
+print("first item: {}".format(items[0]))
+print("second item: {}".format(items[1]))
+print("last item: {}".format(items[-1]))
+
+# use len() to get the number of items
+size = len(items)
+print("there are {} items".format(size))
+
+# join the items (token) by + character (delimiter)
+result = '+'.join(items)
+print("result after join: {}".format(result))
+
+result = '-'.join([items[1], items[4]])
+print("result after join: {}".format(result))
+```
+
+```python
+# whitespaces
+text = "     The cat in the hat     "
+
+print('|{}|'.format(text))
+print('|{}|'.format(text.strip()))
+print('|{}|'.format(text.lstrip()))
+print('|{}|'.format(text.rstrip()))
+```
+
+```python
+# special characters
+text = "\t\tThe cat in the hat\t\n\n"
+
+print('|{}|'.format(text))
+print('|{}|'.format(text.strip()))
+print('|{}|'.format(text.lstrip()))
+print('|{}|'.format(text.rstrip()))
+```
+
+```python
+x = "Mississippi"
+
+# index, rindex
+print(x.index('ss'))    # first ss
+print(x.index('ss', 4)) # second ss
+print(x.rindex('ss'))   # second ss
+
+# find, rfind
+print(x.find('ss'))
+print(x.rfind('ss'))
+print(x.find('ss', 4))
+```
+
+```python
+x = "Mississippi"
+
+# count
+print("there are {} 'ss' in x".format(x.count('ss')))
+
+# startswith, endswith
+print("x starts with 'Miss': {}".format(x.startswith('Miss')))
+print("x ends with 'pi': {}".format(x.endswith('pi')))
+```
+
+```python
+# replace: this will return a new modified string
+x = "Mississippi"
+
+print(x.replace('ss', '+++'))
+print(x)    # string is immutable, cannot be modified
+```
+
+```python
+x = "Mississippi"
+print("x before: {}".format(x))
+
+# python builtin function list() - convert to list of values (characters)
+xlist = list(x)
+print("xlist: {}".format(xlist))
+print("x after: {}".format(x))
+
+# slicing
+xlist[6:] = []  # remove all values in list starting index 6
+print("xlist after slicing: {}".format(xlist))
+
+# convert it back to string x
+x = "".join(xlist)
+print("x after: {}".format(x))
+```
+
+### String Formatting
+
+```python
+print("{0} is the {1} of {2}".format("Ambrosia", "food", "the gods"))
+print("{1} is the {2} of {0}".format("Ambrosia", "food", "the gods"))
+print("{} is the {} of {}\n".format("Ambrosia", "food", "the gods")) # same as first line
+
+print("{{Ambrosia}} is the {0} of {1}\n".format("food", "the gods"))
+
+# named parameters
+print("{food} is the food of {user}\n".format(food="Ambrosia", user="the gods"))
+
+# named parameters with list of values
+print("{food} is the food of {user[0]}".format(food="Ambrosia", user=["the gods", "men", "others"]))
+print("{food} is the food of {user[1]}".format(food="Ambrosia", user=["the gods", "men", "others"]))
+print("{food} is the food of {user[2]}".format(food="Ambrosia", user=["the gods", "men", "others"]))
+```
+
+```python
+# specify the placeholder's width
+print("{0:10} is the food of gods".format('Ambrosia'))
+print("{0:{1}} is the food of gods".format('Ambrosia', 10)) # pass width as parameter
+
+# use named parameters
+print("{food:{width}} is the food of gods".format(food='Ambrosia', width=10))
+
+print("{0:>10} is the food of gods".format('Ambrosia')) # right-aligned
+
+# fill empty spaces with &, right-aligned
+print("{0:&>10} is the food of gods".format('Ambrosia'))
+```
+
+### ## Formatting Strings with %
+
+```python
+print("%s is the %s of %s" % ("Ambrosia", "food", "the gods"))
+
+# you can also pass a list as parameter
+x  = [1, 2, "three"]
+print("The %s contains: %s" % ("x", x))
+print("The first item in %s is %s" % ('x', x[0]))
+```
+
+```python
+# using formatting sequences
+print("pi value is %f" % 3.14149)
+
+# 2 decimal points
+print("pi value is %.2f" % 3.14149)
+
+# width of placeholder
+print("pi value is <%6.2f>" % 3.14149)
+
+# left-aligned
+print("pi value is <%-6.2f>" % 3.14149)
+```
+
+```python
+# use dictionary to pass named parameters
+num_dict = { 'e' : 2.718, 'pi' : 3.14159 }
+
+print("%(pi).2f - %(pi).4f - %(e).2f - %(e).4f" % num_dict)
+```
