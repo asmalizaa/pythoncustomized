@@ -31,7 +31,7 @@ def getmessage(user) :
 getmessage("John")
 ```
 
-'Hello, good morning John!'
+> 'Hello, good morning John!'
 
 **Python None Keyword**
 
