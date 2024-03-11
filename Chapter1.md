@@ -387,12 +387,47 @@ print(msg)
 - The familiar decimal system, our everyday numbering system, provides the standard representation. Lastly, the hexadecimal system, marked by '0x,' introduces letters A-F to represent values beyond 9.
 - Understanding these numeral systems enriches a programmer’s toolkit, allowing them to communicate effectively in different mathematical languages.
 
+```python
+# define a variable age and assign value 17
+age = 17
+
+# print age to output
+print(age)
+
+# numbers
+print(5 + 2 - 3 * 2)
+print(5 / 2)	# floating 2.5
+print(5 / 2.0)	# also floating 2.5
+print(5 // 2)	# integer result 2
+print(3000000000)	# a large number
+print(3000000000 * 3)
+print(3000000000 * 3.0)
+print(2.0e-8)	# scientific
+```
+
 ### Variables: Containers for the Code Treasure
 
 - As we transition to the realm of data storage, variables emerge as the reliable containers for storing and manipulating data values.
 - By assigning values to variables, programmers create placeholders that can be referenced and modified throughout the code.
 - Variables empower code to be dynamic, allowing for efficient data management and manipulation.
 - The flexibility they provide is a testament to Python’s user-friendly approach, enabling programmers to create expressive and adaptable scripts.
+
+```python
+# define a variable name and assign value "John"
+name = "John"
+
+# display name to output
+print(name)
+
+# define a variable age and assign value 17
+age = 17
+
+# print age to output
+print(age)
+
+# Hello John, you are 17 years old
+print("Hello " + name + ", you are " + str(age) + " years old")
+```
 
 ### Naming Conventions: The Art of Clarity
 
