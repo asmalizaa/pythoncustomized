@@ -243,3 +243,20 @@ for x in adj:
     for y in fruits:
         print(x, y)
 ```
+
+## Activity
+
+1. Remove negative numbers from list.
+
+   ```python
+   x = [1, 3, 5, 0, -1, 3, -2]
+   print("before: {} size: {}".format(x, len(x)))
+   ```
+
+2. Count negative numbers.
+
+   ```python
+   y = [[1, -1, 0], [2, 5, -9], [-2, -3, 0]]
+   count = 0
+   ```
+   
