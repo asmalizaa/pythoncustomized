@@ -22,6 +22,18 @@ for i in range(5) :
     greet()
 ```
 
+A function can returns a value.
+
+```python
+def getmessage(user) :
+    return "Hello, good morning {}!".format(user)
+
+getmessage("John")
+
+```
+'Hello, good morning John!'
+```
+
 ## 4.2 Organize interaction between the function and its environment
 
 ## 4.3  Python Built-In Exceptions Hierarchy
