@@ -8,8 +8,8 @@ In computer programming, the if statement is a conditional statement. It is used
 
 An if statement executes a block of code only if the specified condition is met.
 
-**Syntax**
-if condition:
+**Syntax** <br/>
+if condition: <br/>
     # body of if statement
 
 Here, if the condition of the if statement is:
