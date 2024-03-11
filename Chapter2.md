@@ -100,3 +100,43 @@ else:
 ```
 
 ## 2.2  Perform different types of iterations
+
+### The pass instruction
+
+In Python, the pass keyword is an entire statement in itself. This statement doesn’t do anything: it’s discarded during the byte-compile phase. But for a statement that does nothing, the Python pass statement is surprisingly useful.
+
+To do nothing inside a suite, you can use Python’s special pass statement. This statement consists of only the single keyword pass. While you can use pass in many places in Python, it’s not always useful.
+
+```python
+>>> if 1 + 1 == 2:
+...     print("math is ok")
+...     pass
+...     print("but this is to be expected")
+...
+math is ok
+but this is to be expected
+```
+
+In this if statement, removing the pass statement would keep the functionality the same and make your code shorter. You might be wondering why the Python syntax includes a statement that tells the interpreter to do nothing. Couldn’t you achieve the same result by not writing a statement at all?
+
+In some cases, explicitly telling Python to do nothing serves an important purpose. For example, because the pass statement doesn’t do anything, you can use it to fulfill the requirement that a suite include at least one statement:
+
+```python
+if 1 + 1 == 3:
+
+  File "<stdin>", line 2
+
+    ^
+IndentationError: expected an indented block
+```
+
+Even if you don’t want to add any code inside the if block, an if block with no statement creates an empty suite, which is invalid Python syntax.
+
+To fix this, you can use pass.
+
+```python
+>>> if 1 + 1 == 3:
+...     pass
+...
+```
+
