@@ -45,7 +45,7 @@ def check_return():
 print(check_return())
 ```
 
-None
+> None
 
 Declaring a variable as None.
 
@@ -57,10 +57,9 @@ if var is None:
 	print("var has a value of None")
 else:
 	print("var has a value")
-
----
-var has a value of None
 ```
+
+> var has a value of None
 
 **Recursion in Python**
 
@@ -98,20 +97,19 @@ else:
 print("Fibonacci series:")
 for i in range(n_terms):
 	print(recursive_fibonacci(i))
-
----
-Fibonacci series:
-0
-1
-1
-2
-3
-5
-8
-13
-21
-34
 ```
+
+> Fibonacci series:
+> 0
+> 1
+> 1
+> 2
+> 3
+> 5
+> 8
+> 13
+> 21
+> 34
 
 ## 4.2 Organize interaction between the function and its environment
 
@@ -127,10 +125,9 @@ def sum(a,b):
 print(a+b) 
 	
 sum(1,2)
-
----
-3
 ```
+
+> 3
 
 **Arguments**
 
@@ -142,10 +139,9 @@ print(a+b)
 	
 # Here the values 1,2 are arguments 
 sum(1,2) 
-
----
-3
 ```
+
+> 3
 
 **Types of arguments in python**
 
@@ -161,10 +157,9 @@ Python functions can contain two types of arguments:
       # First name is Ram placed first
       # Second name is Babu place second
       person_name("Ram","Babu")
-
-  ---
-  RamBabu
   ```
+
+  >  RamBabu
 
 - Keyword Arguments
 
@@ -176,10 +171,9 @@ Python functions can contain two types of arguments:
 
       # Here we are explicitly assigning the values
       person_name(second_name="Babu",first_name="Ram")
-
-  ---
-  RamBabu
   ```
+
+    >  RamBabu
 
 **Function that takes parameters**
 
@@ -190,11 +184,10 @@ def greetuser(user) :
 
 greetuser("John")
 greetuser("Bob")
-
----
-Hello, good morning John!
-Hello, good morning Bob!
 ```
+
+> Hello, good morning John!
+> Hello, good morning Bob!
 
 ```python
 # function that calculate factorial
@@ -209,11 +202,10 @@ def fact(n) :
 
 print("factorial of {} is {}".format(3, fact(3)))
 print("factorial of {} is {}".format(4, fact(4)))
-
----
-factorial of 3 is 6
-factorial of 4 is 24
 ```
+
+> factorial of 3 is 6
+> factorial of 4 is 24
 
 ```python
 # function that takes 2 parameters
@@ -226,11 +218,10 @@ def power(x, y) :
 
 print("{} to the power of {} is {}".format(2, 3, power(2, 3)))
 print("{} to the power of {} is {}".format(3, 3, power(3, 3)))
-
----
-2 to the power of 3 is 8
-3 to the power of 3 is 27
 ```
+
+> 2 to the power of 3 is 8
+> 3 to the power of 3 is 27
 
 ```python
 # define function that takes 3 parameters
@@ -243,14 +234,13 @@ display("John", "john@example.com")
 display("Bob", "bob@example.com", "Today is a good day")
 display("Bob", "bob@example.com")
 display("Sarah")
-
----
-Name: John, Email: john@example.com, Message: Good morning!
-Name: John, Email: john@example.com, Message: Hello World!
-Name: Bob, Email: bob@example.com, Message: Today is a good day
-Name: Bob, Email: bob@example.com, Message: Hello World!
-Name: Sarah, Email: user@example.com, Message: Hello World!
 ```
+
+> Name: John, Email: john@example.com, Message: Good morning!
+> Name: John, Email: john@example.com, Message: Hello World!
+> Name: Bob, Email: bob@example.com, Message: Today is a good day
+> Name: Bob, Email: bob@example.com, Message: Hello World!
+> Name: Sarah, Email: user@example.com, Message: Hello World!
 
 ```python
 # define another function that takes 3 parameters: string, integer, boolean
@@ -268,21 +258,20 @@ getinformation(flag=False, name="alan", number=9)
 
 # default parameter
 getinformation("william", 18)
-
----
-name: david
-number x 2: 24
-flag: True
-name: david
-number x 2: 24
-flag: True
-name: alan
-number x 2: 18
-flag: False
-name: william
-number x 2: 36
-flag: False
 ```
+
+> name: david
+> number x 2: 24
+> flag: True
+> name: david
+> number x 2: 24
+> flag: True
+> name: alan
+> number x 2: 18
+> flag: False
+> name: william
+> number x 2: 36
+> flag: False
 
 ```python
 # function with default parameters
@@ -296,16 +285,15 @@ fun1(6, 7, 8)
 fun1(a=10, c=30)
 fun1(c=100)
 fun1(b=200)
-
----
-a: 1 b: 2 c: 3
-a: 6 b: 2 c: 3
-a: 6 b: 7 c: 3
-a: 6 b: 7 c: 8
-a: 10 b: 2 c: 30
-a: 1 b: 2 c: 100
-a: 1 b: 200 c: 3
 ```
+
+> a: 1 b: 2 c: 3
+> a: 6 b: 2 c: 3
+> a: 6 b: 7 c: 3
+> a: 6 b: 7 c: 8
+> a: 10 b: 2 c: 30
+> a: 1 b: 2 c: 100
+> a: 1 b: 200 c: 3
 
 ```python
 # print() takes variable number of arguments
@@ -315,14 +303,13 @@ print(1, 2, 3, 4, 5)
 print("hello")
 print("hello", 100, True)
 print()
-
----
-1
-1 2
-1 2 3 4 5
-hello
-hello 100 True
 ```
+
+> 1
+> 1 2
+> 1 2 3 4 5
+> hello
+> hello 100 True
 
 **Function that takes a variable number of arguments**
 
@@ -349,19 +336,18 @@ calculate(3, 4, 5, 6)
 calculate()
 calculate("hello", 10, 20)
 calculate("hello", 10, "world", 20, True)
-
----
-total: 1
-total: 3
-total: 18
-no parameters
-hello
-total: 30
-hello
-world
-True
-total: 30
 ```
+
+> total: 1
+> total: 3
+> total: 18
+> no parameters
+> hello
+> total: 30
+> hello
+> world
+> True
+> total: 30
 
 ```python
 # the first 2 parameters are required
@@ -373,15 +359,14 @@ def fun2(value, name, *numbers) :
 
 fun2(1, "alan")
 fun2(1, 2, 3, 4, 5)
-
----
-1
-alan
-()
-1
-2
-(3, 4, 5)
 ```
+
+> 1
+> alan
+> ()
+> 1
+> 2
+> (3, 4, 5)
 
 Indefinite number of arguments.
 
@@ -399,15 +384,14 @@ def example_fun(x, y, **other) :
 
 example_fun(1, 2, foo = 3, bar = 4)
 example_fun(5, 6, a = 1, b = 2, c = 3, d = 4)
-
----
-1 2 {'foo': 3, 'bar': 4}
-x: 1, y: 2, keys in 'other': ['foo', 'bar']
-The total of values in other is 7
-5 6 {'a': 1, 'b': 2, 'c': 3, 'd': 4}
-x: 5, y: 6, keys in 'other': ['a', 'b', 'c', 'd']
-The total of values in other is 10
 ```
+
+> 1 2 {'foo': 3, 'bar': 4}
+> x: 1, y: 2, keys in 'other': ['foo', 'bar']
+> The total of values in other is 7
+> 5 6 {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+> x: 5, y: 6, keys in 'other': ['a', 'b', 'c', 'd']
+> The total of values in other is 10
 
 Mutable objects as arguments.
 
@@ -427,11 +411,10 @@ print("before: x = {} y = {} z = {}".format(x, y, z))
 # call function and pass parameters
 fun3(x, y, z)
 print("after: x = {} y = {} z = {}".format(x, y, z))
-
----
-before: x = 5 y = [1, 2] z = [10, 20]
-after: x = 5 y = [1, 2, 3] z = [10, 20]
 ```
+
+> before: x = 5 y = [1, 2] z = [10, 20]
+> after: x = 5 y = [1, 2, 3] z = [10, 20]
 
 **Function as parameter**
 
@@ -446,11 +429,10 @@ def c_to_k(tempc) :
 
 print("{}F is {:.3f}K".format(100, f_to_k(100)))
 print("{}C is {:.3f}K".format(27, c_to_k(27)))
-
----
-100F is 310.928K
-27C is 300.150K
 ```
+
+> 100F is 310.928K
+> 27C is 300.150K
 
 ```python
 # assign function to variable
@@ -463,11 +445,10 @@ print("result: {:.3f}".format(result))
 
 result = fun_ctok(28)
 print("result: {:.3f}".format(result))
-
----
-result: 338.706
-result: 301.150
 ```
+
+> result: 338.706
+> result: 301.150
 
 ```python
 # place the variables in a list or tuple or dictionary
@@ -477,12 +458,11 @@ print(temp_converter)
 # call the function using the key
 print("{:.3f}".format(temp_converter['ftok'](150)))
 print("{:.3f}".format(temp_converter['ctok'](28)))
-
----
-{'ftok': <function f_to_k at 0x0000019642412CA0>, 'ctok': <function c_to_k at 0x0000019642412D40>}
-338.706
-301.150
 ```
+
+> {'ftok': <function f_to_k at 0x0000019642412CA0>, 'ctok': <function c_to_k at 0x0000019642412D40>}
+> 338.706
+> 301.150
 
 **Lambda Expressions**
 
@@ -498,11 +478,10 @@ temp_converter_lambda = { 'ftoklambda' : lambda tempf : 273.15 + (tempf - 32) * 
 
 print("{:.3f}".format(temp_converter_lambda['ftoklambda'](150)))
 print("{:.3f}".format(temp_converter_lambda['ctoklambda'](28)))
-
----
-338.706
-301.150
 ```
+
+> 338.706
+> 301.150
 
 **Variable Scopes**
 
@@ -521,13 +500,12 @@ def showemail() :
 print(email)    # get global
 showemail()
 print(email)    # get global
-
----
-john@example.com
-john@example.com
-bob@example.com
-john@example.com
 ```
+
+> john@example.com
+> john@example.com
+> bob@example.com
+> john@example.com
 
 ```python
 name = "john"
@@ -540,12 +518,11 @@ def showname(name) :
 print(name)
 showname(name)
 print(name)
-
----
-john
-bob
-john
 ```
+
+> john
+> bob
+> john
 
 ```python
 title = "python"
@@ -560,13 +537,12 @@ def showtitle() :
 print(title)
 showtitle()
 print(title)    # value updated
-
----
-python
-python
-java
-java
 ```
+
+> python
+> python
+> java
+> java
 
 
 ## 4.3  Python Built-In Exceptions Hierarchy
