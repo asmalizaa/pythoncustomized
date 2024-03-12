@@ -153,7 +153,7 @@ for row in result:
     print(row)
 ```
 
-You can streamline things a bit and perform multiple inserts by passing in a list of dictionaries of the field names and values for each insert:
+You can streamline things a bit and perform multiple inserts by passing in a list of dictionaries of the field names and values for each insert:
 
 ```python
 result = session.execute(select([people]).where(people.c.name == 'Jill'))
