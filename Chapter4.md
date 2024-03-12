@@ -720,7 +720,7 @@ finally:
     print("This is finally block.")
 ```
 
-***Output**
+**Output**
 
 >Error: Denominator cannot be 0.
 >This is finally block.
