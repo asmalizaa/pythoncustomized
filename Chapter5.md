@@ -77,5 +77,102 @@ conn.close()
 
 ## 5.2 ORM and SQLAlchemy
 
+**Object-Relational Mapping**
+
+Object Relational Mapping (ORM) is a technique used in creating a "bridge" between object-oriented programs and, in most cases, relational databases.
+
+When interacting with a database using OOP languages, you'll have to perform different operations like creating, reading, updating, and deleting (CRUD) data from a database. By design, you use SQL for performing these operations in relational databases.
+
+While using SQL for this purpose isn't necessarily a bad idea, the ORM and ORM tools help simplify the interaction between relational databases and different OOP languages.
+
+**SQLAlchemy**
+
+SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL.
+
+It provides a full suite of well known enterprise-level persistence patterns, designed for efficient and high-performing database access, adapted into a simple and Pythonic domain language.
+
+SQLAlchemy’s goal is to automate redundant database tasks and provide Python object-based interfaces to the data while still allowing the developer control of the database and access to the underlying SQL.
+
+You can install SQLAlchemy in your environment with pip:
+
+ ```python
+pip install sqlalchemy
+```
+
+Use SQLAlchemy to replicate what you did in section 5.1: Create a table, add
+three rows, query the table, and update one row.
+
+First, you need to import the components you need to connect to the database and
+map a table to Python objects.
+
+```python
+from sqlalchemy import create_engine, select, MetaData, Table, Column, Integer, String
+from sqlalchemy.orm import sessionmaker
+```
+
+Now you can think about connecting to the database:
+
+```python
+dbPath = 'datafile2.db'
+engine = create_engine('sqlite:///%s' % dbPath)
+metadata = MetaData(engine)
+people = Table('people', metadata, 
+        Column('id', Integer, primary_key=True),
+        Column('name', String),
+        Column('count', Integer),
+    )
+Session = sessionmaker(bind=engine)
+session = Session()
+metadata.create_all(engine)
+```
+
+ When the table is created, the next step is inserting some records. 
+
+```python
+people_ins = people.insert().values(name='Bob', count=1)
+str(people_ins)
+session.execute(people_ins)
+session.commit()
+```
+
+ Add another 2 records to the table.
+
+ ```python
+session.execute(people_ins, [
+            {'name': 'Jill', 'count':15},
+            {'name': 'Joe', 'count':10}
+            ])
+session.commit()
+```
+
+Execute another statement to retrieve all records.
+
+```python
+result = session.execute(select([people]))
+for row in result:
+    print(row)
+```
+
+You can streamline things a bit and perform multiple inserts by passing in a list of dictionaries of the field names and values for each insert:
+
+```python
+result = session.execute(select([people]).where(people.c.name == 'Jill'))
+for row in result:
+    print(row)
+```
+
+You can also use the select() method with a where() method to find a particular
+record. In the example, you’re looking for any records in which the name column
+equals 'Jill'. Note that the where expression uses people.c.name, with the c
+indicating that name is a column in the people table:
+
+```python
+result = session.execute(people.update().values(count=20).where(people.c.name == 'Jill'))
+session.commit()
+result = session.execute(select([people]).where(people.c.name == 'Jill'))
+for row in result:
+    print(row)
+```
+
 ## 5.3 Python Web API with Flask
 
