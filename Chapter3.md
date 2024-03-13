@@ -698,4 +698,4 @@ employees = ["1080:Priscillia:Forbes:Shepard:Cleaning Services",
              "4730:Nadelle::Landale:Warehousing"]
 ```
 
-This time, add additional feature to allow user to sort the records by ID column.
+This time, add additional feature to allow user to sort the records by columns.
