@@ -684,3 +684,18 @@ num_dict = { 'e' : 2.718, 'pi' : 3.14159 }
 
 print("%(pi).2f - %(pi).4f - %(e).2f - %(e).4f" % num_dict)
 ```
+
+## Activity
+
+Given liost of employees, write a program to extract employee details and display the output as a table.
+
+```python
+employees = ["1080:Priscillia:Forbes:Shepard:Cleaning Services",
+             "4382:Devan::Fielder:Public Relations",
+             "6285:Grey::Collyer:Public Relations",
+             "6201:Kierah::Battaile:Catering",
+             "3702:Albert:Lukas:Montgomery:Legal",
+             "4730:Nadelle::Landale:Warehousing"]
+```
+
+This time, add additional feature to allow user to sort the records.
