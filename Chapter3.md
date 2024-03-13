@@ -180,6 +180,31 @@ y = sorted(x)
 z = sorted(x, reverse=True)
 ```
 
+## Activity
+
+Given a list of employees, write a program to loop and extract data for each employee and display the output in a tabular/columns as below.
+
+```
+employees = ["1602:Albert:Lukas:Montgomery:Legal",
+             "1602:Albert:Lukas:Montgomery:Legal",
+             "1602:Albert:Lukas:Montgomery:Legal",
+             "1601:Albert:Lukas:Montgomery:Legal",
+             "3702:Albert:Lukas:Montgomery:Legal",
+             "4730:Nadelle::Landale:Warehousing"]
+```
+
+Expected output.
+
+```
+ID    First                Middle               Last                 Department
+--------------------------------------------------------------------------------
+1602  Albert               Lukas                Montgomery           Legal
+1602  Albert               Lukas                Montgomery           Legal
+1602  Albert               Lukas                Montgomery           Legal
+1601  Albert               Lukas                Montgomery           Legal
+3702  Albert               Lukas                Montgomery           Legal
+4730  Nadelle                                   Landale              Warehousing
+```
 ## 3.2 Collect and process data using tuples
 
 Tuple is very similar to list, that is a sequence of comma-separated values defined in a pair of brackets. Tuple is immutable i.e. it cannot be modified (readonly).
