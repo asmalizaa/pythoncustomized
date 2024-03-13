@@ -687,7 +687,7 @@ print("%(pi).2f - %(pi).4f - %(e).2f - %(e).4f" % num_dict)
 
 ## Activity
 
-Given liost of employees, write a program to extract employee details and display the output as a table.
+Given list of employees, write a program to extract employee details and display the output as a table.
 
 ```python
 employees = ["1080:Priscillia:Forbes:Shepard:Cleaning Services",
