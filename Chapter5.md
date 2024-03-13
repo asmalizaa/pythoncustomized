@@ -28,6 +28,13 @@ cursor = conn.cursor()
 print(cursor)
 ```
 
+Next is to create a table.
+
+```python
+# create table
+cursor.execute("create table people (id integer primary key, name text, count integer)")
+```
+
 ### Apply CRUD Operations on SQLite3
 
 At this point, you’re able to make queries against the database. In the current situation, because the database has no tables or records yet, you first need to create a table and insert a couple of records:
