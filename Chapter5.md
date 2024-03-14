@@ -236,12 +236,14 @@ REST stands for REpresentational State Transfer and is an architectural style us
 
 Flask is a lightweight Python web framework that allows you to create web applications and build RESTful APIs with ease. Let’s dive into creating a simple REST API using Flask:
 
+Reference: (https://www.askpython.com/python-modules/flask/flask-crud-application)
+
 1. Setting Up Your Flask Project:
    - First, create a virtual environment for your project.
    - Install Flask using pip install flask.
 
      ```python
-     pip install flask
+     pip install flask_sqlalchemy
      ```
 
 2. Creating Your First REST API Endpoint:
@@ -249,43 +251,156 @@ Flask is a lightweight Python web framework that allows you to create web applic
    - Here’s a basic example:
 
      ```python
-     #!/usr/bin/env python
-     from flask import Flask, jsonify
+     from flask import Blueprint, Flask,render_template,request,redirect
+     from models import db,EmployeeModel
 
      app = Flask(__name__)
+     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///testdb.db'
+     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-     @app.route('/')
-     def index():
-     	return jsonify({'name': 'alice', 'email': 'alice@example.com'})
+     simple_page = Blueprint('simple_page', __name__,
+                        template_folder='templates')
+     app.register_blueprint(simple_page)
 
-     if __name__ == '__main__':
-     	app.run()
+     db.init_app(app)
+
+     @app.before_request
+     def create_table():
+     	db.create_all()
      ```
 
-   - In this example, when you visit localhost:5000, it will return a JSON response with the name and email.
-
 3. Handling Different HTTP Request Methods:
-   - By default, the above code handles GET requests.
-   - To handle other request methods (POST, DELETE, PUT), you can specify them explicitly:
+   - Let's create a method that will launch the html form to add new record.
 
      ```python
-     @app.route('/', methods=['POST'])
+     @app.route('/data/create' , methods = ['GET','POST'])
      def create():
-     	# Handle POST request logic here
-     	return jsonify({'message': 'Resource created'})
+     	if request.method == 'GET':
+     		return render_template('createpage.html')
 
-     @app.route('/', methods=['DELETE'])
-     def delete():
-     	# Handle DELETE request logic here
-     	return jsonify({'message': 'Resource deleted'})
+     	if request.method == 'POST':
+     		employee_id = request.form['employee_id']
+     		name = request.form['name']
+     		age = request.form['age']
+     		position = request.form['position']
+     		employee = EmployeeModel(employee_id=employee_id, name=name, age=age, position = position)
+     		db.session.add(employee)
+     		db.session.commit()
+     		return redirect('/data')
+	```
+ 	- Once the record was successfully created, the request will be redirected to another function that will render the datalist.html
 
-     @app.route('/', methods=['PUT'])
-     def update():
-     	# Handle PUT request logic here
-     	return jsonify({'message': 'Resource updated'})
+ 	```python
+ 	@app.route('/data')
+ 	def RetrieveDataList():
+ 		employees = EmployeeModel.query.all()
+ 		return render_template('datalist.html',employees = employees)
+ 	```
+ - Next function will process a request for a single record.
+
+   ```python
+   @app.route('/data/<int:id>')
+   def RetrieveSingleEmployee(id):
+   		employee = EmployeeModel.query.filter_by(employee_id=id).first()
+   		if employee:
+		   	return render_template('data.html', employee = employee)
+    	return f"Employee with id ={id} Does not exist"
 	```
 
-4. Testing Your API:
+- Function to update a record.
+
+  ```python
+  @app.route('/data/<int:id>/update',methods = ['GET','POST'])
+def update(id):
+    employee = EmployeeModel.query.filter_by(employee_id=id).first()
+    if request.method == 'POST':
+        if employee:
+            db.session.delete(employee)
+            db.session.commit()
+ 
+            name = request.form['name']
+            age = request.form['age']
+            position = request.form['position']
+            employee = EmployeeModel(employee_id=id, name=name, age=age, position = position)
+ 
+            db.session.add(employee)
+            db.session.commit()
+            return redirect(f'/data/{id}')
+        return f"Employee with id = {id} Does not exist"
+ 
+    return render_template('update.html', employee = employee)
+	```
+
+ - Function to delete a record.
+
+   ```python
+   @app.route('/data/<int:id>/delete', methods=['GET','POST'])
+def delete(id):
+    employee = EmployeeModel.query.filter_by(employee_id=id).first()
+    if request.method == 'POST':
+        if employee:
+            db.session.delete(employee)
+            db.session.commit()
+            return redirect('/data')
+        abort(404)
+ 
+    return render_template('delete.html')
+	```
+
+ - Finally, start the app and test it.
+
+4. Create a folder called **templates** to store all the static pages to be rendered.
+
+	**createpage.html**
+   ```html
+   <form action="" method="POST">
+  <p>employee ID <input type="integer" name="employee_id" /></p>
+  <p>name <input type="text" name="name" /></p>
+  <p>age <input type="integer" name="age" /></p>
+  <p>position <input type="text" name="position" /></p>
+  <p><input type="submit" value="Submit" /></p>
+</form>
+   ```
+
+**datalist.html**
+   ```html
+   {% for employee in employees %}
+<h3>{{employee}}</h3><hr>
+{% endfor %}
+   ```
+
+**data.html**
+   ```html
+   <h3>Id</h3>
+<p>{{employee.employee_id}}</p><hr>
+<h3>Name</h3>
+<p>{{employee.name}}</p><hr>
+<h3>Age</h3>
+<p>{{employee.age}}</p><hr>
+<h3>Position</h3>
+<p>{{employee.position}}</p><hr>
+   ```
+
+**update.html**
+   ```html
+   <form action='' method = "POST">
+    <p>name <input type = "text" name = "name" value="{{employee.name}}"/></p>
+    <p>age <input type = "integer" name = "age"  value="{{employee.age}}"/></p>
+    <p>position <input type = "text" name = "position" value="{{employee.position}}"/></p>
+    <p><input type = "submit" value = "Submit" /></p>
+  </form>
+   ```
+
+	**delete.html**
+   ```html
+   <form action='' method="post">
+    Click YES to confirm
+    <input type = "submit" value="YES">
+    <a href='/data'>Cancel</a>
+</form>
+   ```
+
+6. Testing Your API:
    - Run your Flask app (app.run()).
    - Use tools like Postman or your browser to test different endpoints and methods.
 
