@@ -294,8 +294,8 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
    ```python
    @app.route('/data')
    def RetrieveDataList():
-   		employees = EmployeeModel.query.all()
-   		return render_template('datalist.html',employees = employees)
+   	employees = EmployeeModel.query.all()
+   	return render_template('datalist.html',employees = employees)
    ```
  
  - Next function will process a request for a single record.
@@ -306,19 +306,19 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
    	employee = EmployeeModel.query.filter_by(employee_id=id).first()
    	if employee:
    		return render_template('data.html', employee = employee)
-   return f"Employee with id ={id} Does not exist"
+   	return f"Employee with id ={id} Does not exist"
    ```
 
 - Function to update a record.
 
   ```python
   @app.route('/data/<int:id>/update',methods = ['GET','POST'])
-def update(id):
-    employee = EmployeeModel.query.filter_by(employee_id=id).first()
-    if request.method == 'POST':
-        if employee:
-            db.session.delete(employee)
-            db.session.commit()
+  def update(id):
+  	employee = EmployeeModel.query.filter_by(employee_id=id).first()
+  	if request.method == 'POST':
+  		if employee:
+  			db.session.delete(employee)
+  			db.session.commit()
  
             name = request.form['name']
             age = request.form['age']
@@ -337,8 +337,8 @@ def update(id):
 
    ```python
    @app.route('/data/<int:id>/delete', methods=['GET','POST'])
-def delete(id):
-    employee = EmployeeModel.query.filter_by(employee_id=id).first()
+   def delete(id):
+   	employee = EmployeeModel.query.filter_by(employee_id=id).first()
     if request.method == 'POST':
         if employee:
             db.session.delete(employee)
