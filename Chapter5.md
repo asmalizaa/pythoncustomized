@@ -320,65 +320,64 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
      		db.session.add(employee)
      		db.session.commit()
      		return redirect('/data')
-	```
- 
- - Once the record was successfully created, the request will be redirected to another function that will render the datalist.html
+     ```
+   - Once the record was successfully created, the request will be redirected to another function that will render the datalist.html
 
-   ```python
-   @app.route('/data')
-   def RetrieveDataList():
-   	employees = EmployeeModel.query.all()
-   	return render_template('datalist.html',employees = employees)
-   ```
- 
- - Next function will process a request for a single record.
+     ```python
+     @app.route('/data')
+     def RetrieveDataList():
+     	employees = EmployeeModel.query.all()
+     	return render_template('datalist.html',employees = employees)
+     ```
 
-   ```python
-   @app.route('/data/<int:id>')
-   def RetrieveSingleEmployee(id):
-   	employee = EmployeeModel.query.filter_by(employee_id=id).first()
-   	if employee:
-   		return render_template('data.html', employee = employee)
-   	return f"Employee with id ={id} Does not exist"
-   ```
+   - Next function will process a request for a single record.
 
-- Function to update a record.
+     ```python
+     @app.route('/data/<int:id>')
+     def RetrieveSingleEmployee(id):
+     	employee = EmployeeModel.query.filter_by(employee_id=id).first()
+     	if employee:
+     		return render_template('data.html', employee = employee)
+     return f"Employee with id ={id} Does not exist"
+     ```
 
-  ```python
-  @app.route('/data/<int:id>/update',methods = ['GET','POST'])
-  def update(id):
-  	employee = EmployeeModel.query.filter_by(employee_id=id).first()
-  	if request.method == 'POST':
-  		if employee:
-  			db.session.delete(employee)
-  			db.session.commit()
+   - Function to update a record.
 
-  			name = request.form['name']
-  			age = request.form['age']
-  			position = request.form['position']
-  			employee = EmployeeModel(employee_id=id, name=name, age=age, position = position)
+     ```python
+     @app.route('/data/<int:id>/update',methods = ['GET','POST'])
+     def update(id):
+     	employee = EmployeeModel.query.filter_by(employee_id=id).first()
+     	if request.method == 'POST':
+     		if employee:
+     			db.session.delete(employee)
+     			db.session.commit()
 
-  			db.session.add(employee)
-  			db.session.commit()
-  			return redirect(f'/data/{id}')
-  		return f"Employee with id = {id} Does not exist"
-  	return render_template('update.html', employee = employee)
-  ```
+     			name = request.form['name']
+     			age = request.form['age']
+     			position = request.form['position']
+     			employee = EmployeeModel(employee_id=id, name=name, age=age, position = position)
 
-- Function to delete a record.
+     			db.session.add(employee)
+     			db.session.commit()
+     			return redirect(f'/data/{id}')
+     		return f"Employee with id = {id} Does not exist"
+     	return render_template('update.html', employee = employee)
+     ```
 
-  ```python
-  @app.route('/data/<int:id>/delete', methods=['GET','POST'])
-  def delete(id):
-  	employee = EmployeeModel.query.filter_by(employee_id=id).first()
-  		if request.method == 'POST':
-  			if employee:
-  				db.session.delete(employee)
-  				db.session.commit()
-  				return redirect('/data')
-  			abort(404)
-  		return render_template('delete.html')
-  ```
+   - Function to delete a record.
+
+     ```python
+     @app.route('/data/<int:id>/delete', methods=['GET','POST'])
+     def delete(id):
+     	employee = EmployeeModel.query.filter_by(employee_id=id).first()
+     	if request.method == 'POST':
+     		if employee:
+     			db.session.delete(employee)
+     			db.session.commit()
+     			return redirect('/data')
+     		abort(404)
+     	return render_template('delete.html')
+     ```
 
 4. Create a folder called **templates** to store all the static pages to be rendered.
 
