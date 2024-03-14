@@ -288,14 +288,16 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
      		db.session.commit()
      		return redirect('/data')
 	```
- 	- Once the record was successfully created, the request will be redirected to another function that will render the datalist.html
+ 
+ - Once the record was successfully created, the request will be redirected to another function that will render the datalist.html
 
- 	```python
- 	@app.route('/data')
- 	def RetrieveDataList():
- 		employees = EmployeeModel.query.all()
+   ```python
+   @app.route('/data')
+   def RetrieveDataList():
+   		employees = EmployeeModel.query.all()
  		return render_template('datalist.html',employees = employees)
  	```
+ 
  - Next function will process a request for a single record.
 
    ```python
