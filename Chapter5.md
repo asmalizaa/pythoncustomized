@@ -232,103 +232,59 @@ session.commit()
 
 ## 5.3 Python Web API with Flask
 
-Reference: (https://www.geeksforgeeks.org/python-build-a-rest-api-using-flask/)
+REST stands for REpresentational State Transfer and is an architectural style used in modern web development. It defines a set or rules/constraints for a web application to send and receive data. In this topic, we will build a REST API in Python using the Flask framework. 
 
-![image](https://github.com/asmalizaa/pythoncustomized/assets/23090837/e5cf6007-6892-47ef-b28d-15fc3b15f87f)
+Flask is a lightweight Python web framework that allows you to create web applications and build RESTful APIs with ease. Let’s dive into creating a simple REST API using Flask:
 
-REST stands for REpresentational State Transfer and is an architectural style used in modern web development. It defines a set or rules/constraints for a web application to send and receive data. In this article, we will build a REST API in Python using the Flask framework. Flask is a popular micro framework for building web applications. Since it is a micro-framework, it is very easy to use and lacks most of the advanced functionality which is found in a full-fledged framework. Therefore, building a REST API in Flask is very simple. 
+1. Setting Up Your Flask Project:
+   - First, create a virtual environment for your project.
+   - Install Flask using pip install flask.
 
-There are two ways of creating a REST API in Flask:
-- Using Flask without any external libraries
-- Using flask_restful library
+     ```python
+     pip install flask
+     ```
 
-**Libraries required**
-flask_restful can be installed via the pip command:
+2. Creating Your First REST API Endpoint:
+   - Define a Flask app and create an endpoint that returns data in JSON format.
+   - Here’s a basic example:
 
-```python
-pip install flask-restful
-```
+     ```python
+     #!/usr/bin/env python
+     from flask import Flask, jsonify
 
-### Method 1: using only Flask
+     app = Flask(__name__)
 
-Here, there are two functions: One function to just return or print the data sent through GET or POST and another function to calculate the square of a number sent through GET request and print it.
+     @app.route('/')
+     def index():
+     	return jsonify({'name': 'alice', 'email': 'alice@example.com'})
 
-```python
-# Using flask to make an api 
-# import necessary libraries and functions 
-from flask import Flask, jsonify, request 
+     if __name__ == '__main__':
+     	app.run()
+     ```
 
-# creating a Flask app 
-app = Flask(__name__) 
+   - In this example, when you visit localhost:5000, it will return a JSON response with the name and email.
 
-# on the terminal type: curl http://127.0.0.1:5000/ 
-# returns hello world when we use GET. 
-# returns the data that we send when we use POST. 
-@app.route('/', methods = ['GET', 'POST']) 
-def home(): 
-	if(request.method == 'GET'): 
-		data = "hello world"
-		return jsonify({'data': data}) 
+3. Handling Different HTTP Request Methods:
+   - By default, the above code handles GET requests.
+   - To handle other request methods (POST, DELETE, PUT), you can specify them explicitly:
 
+	 ```python
+   @app.route('/', methods=['POST'])
+   def create():
+   	# Handle POST request logic here
+    return jsonify({'message': 'Resource created'})
 
-# A simple function to calculate the square of a number 
-# the number to be squared is sent in the URL when we use GET 
-# on the terminal type: curl http://127.0.0.1:5000 / home / 10 
-# this returns 100 (square of 10) 
-@app.route('/home/<int:num>', methods = ['GET']) 
-def disp(num): 
-	return jsonify({'data': num**2}) 
+@app.route('/', methods=['DELETE'])
+def delete():
+    # Handle DELETE request logic here
+    return jsonify({'message': 'Resource deleted'})
 
+@app.route('/', methods=['PUT'])
+def update():
+    # Handle PUT request logic here
+    return jsonify({'message': 'Resource updated'})
+	```
 
-# driver function 
-if __name__ == '__main__': 
-	app.run(debug = True) 
-```
-
-### Method 2: Using flask-restful
-
-Flask Restful is an extension for Flask that adds support for building REST APIs in Python using Flask as the back-end. It encourages best practices and is very easy to set up. Flask restful is very easy to pick up if you’re already familiar with flask. In flask_restful, the main building block is a resource. Each resource can have several methods associated with it such as GET, POST, PUT, DELETE, etc. for example, there could be a resource that calculates the square of a number whenever a get request is sent to it. Each resource is a class that inherits from the Resource class of flask_restful. Once the resource is created and defined, we can add our custom resource to the api and specify a URL path for that corresponding resource.
-
-```python
-# using flask_restful 
-from flask import Flask, jsonify, request 
-from flask_restful import Resource, Api 
-
-# creating the flask app 
-app = Flask(__name__) 
-# creating an API object 
-api = Api(app) 
-
-# making a class for a particular resource 
-# the get, post methods correspond to get and post requests 
-# they are automatically mapped by flask_restful. 
-# other methods include put, delete, etc. 
-class Hello(Resource): 
-	# corresponds to the GET request. 
-	# this function is called whenever there 
-	# is a GET request for this resource 
-	def get(self): 
-		return jsonify({'message': 'hello world'}) 
-
-	# Corresponds to POST request 
-	def post(self): 
-		data = request.get_json()	 # status code 
-		return jsonify({'data': data}), 201
-
-
-# another resource to calculate the square of a number 
-class Square(Resource): 
-	def get(self, num): 
-		return jsonify({'square': num**2}) 
-
-# adding the defined resources along with their corresponding urls 
-api.add_resource(Hello, '/') 
-api.add_resource(Square, '/square/<int:num>') 
-
-# driver function 
-if __name__ == '__main__': 
-	app.run(debug = True) 
-```
 
 ## 5.4 Serialize Data with Marshmallow
 
