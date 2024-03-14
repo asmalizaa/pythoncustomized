@@ -348,57 +348,60 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
     return render_template('delete.html')
 	```
 
- - Finally, start the app and test it.
-
 4. Create a folder called **templates** to store all the static pages to be rendered.
 
-	**createpage.html**
+   **createpage.html**
+   
    ```html
    <form action="" method="POST">
-  <p>employee ID <input type="integer" name="employee_id" /></p>
-  <p>name <input type="text" name="name" /></p>
-  <p>age <input type="integer" name="age" /></p>
-  <p>position <input type="text" name="position" /></p>
-  <p><input type="submit" value="Submit" /></p>
-</form>
+   	<p>employee ID <input type="integer" name="employee_id" /></p>
+   	<p>name <input type="text" name="name" /></p>
+   	<p>age <input type="integer" name="age" /></p>
+   	<p>position <input type="text" name="position" /></p>
+   	<p><input type="submit" value="Submit" /></p>
+   </form>
    ```
 
 **datalist.html**
+
    ```html
    {% for employee in employees %}
-<h3>{{employee}}</h3><hr>
-{% endfor %}
+	<h3>{{employee}}</h3><hr>
+   {% endfor %}
    ```
 
 **data.html**
+
    ```html
    <h3>Id</h3>
-<p>{{employee.employee_id}}</p><hr>
-<h3>Name</h3>
-<p>{{employee.name}}</p><hr>
-<h3>Age</h3>
-<p>{{employee.age}}</p><hr>
-<h3>Position</h3>
-<p>{{employee.position}}</p><hr>
+   <p>{{employee.employee_id}}</p><hr>
+   <h3>Name</h3>
+   <p>{{employee.name}}</p><hr>
+   <h3>Age</h3>
+   <p>{{employee.age}}</p><hr>
+   <h3>Position</h3>
+   <p>{{employee.position}}</p><hr>
    ```
 
 **update.html**
+
    ```html
    <form action='' method = "POST">
-    <p>name <input type = "text" name = "name" value="{{employee.name}}"/></p>
-    <p>age <input type = "integer" name = "age"  value="{{employee.age}}"/></p>
-    <p>position <input type = "text" name = "position" value="{{employee.position}}"/></p>
-    <p><input type = "submit" value = "Submit" /></p>
-  </form>
+	<p>name <input type = "text" name = "name" value="{{employee.name}}"/></p>
+	<p>age <input type = "integer" name = "age"  value="{{employee.age}}"/></p>
+	<p>position <input type = "text" name = "position" value="{{employee.position}}"/></p>
+	<p><input type = "submit" value = "Submit" /></p>
+   </form>
    ```
 
-	**delete.html**
+**delete.html**
+ 
    ```html
    <form action='' method="post">
     Click YES to confirm
     <input type = "submit" value="YES">
     <a href='/data'>Cancel</a>
-</form>
+   </form>
    ```
 
 6. Testing Your API:
