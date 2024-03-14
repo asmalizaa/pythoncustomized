@@ -295,8 +295,8 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
    @app.route('/data')
    def RetrieveDataList():
    		employees = EmployeeModel.query.all()
- 		return render_template('datalist.html',employees = employees)
- 	```
+   		return render_template('datalist.html',employees = employees)
+   ```
  
  - Next function will process a request for a single record.
 
