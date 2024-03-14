@@ -268,23 +268,26 @@ Flask is a lightweight Python web framework that allows you to create web applic
    - By default, the above code handles GET requests.
    - To handle other request methods (POST, DELETE, PUT), you can specify them explicitly:
 
-	 ```python
-   @app.route('/', methods=['POST'])
-   def create():
-   	# Handle POST request logic here
-    return jsonify({'message': 'Resource created'})
+     ```python
+     @app.route('/', methods=['POST'])
+     def create():
+     	# Handle POST request logic here
+     		return jsonify({'message': 'Resource created'})
 
-@app.route('/', methods=['DELETE'])
-def delete():
-    # Handle DELETE request logic here
-    return jsonify({'message': 'Resource deleted'})
+     @app.route('/', methods=['DELETE'])
+     def delete():
+     	# Handle DELETE request logic here
+     	return jsonify({'message': 'Resource deleted'})
 
-@app.route('/', methods=['PUT'])
-def update():
-    # Handle PUT request logic here
-    return jsonify({'message': 'Resource updated'})
+     @app.route('/', methods=['PUT'])
+     def update():
+     	# Handle PUT request logic here
+     	return jsonify({'message': 'Resource updated'})
 	```
 
+4. Testing Your API:
+   - Run your Flask app (app.run()).
+   - Use tools like Postman or your browser to test different endpoints and methods.
 
 ## 5.4 Serialize Data with Marshmallow
 
