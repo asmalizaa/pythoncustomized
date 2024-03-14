@@ -42,6 +42,7 @@ Python None is the function returns when there are no return statements.
 ```python
 def check_return():
 	pass
+
 print(check_return())
 ```
 
@@ -83,20 +84,20 @@ Disadvantages of using recursio
 
 # Recursive function
 def recursive_fibonacci(n):
-if n <= 1:
-	return n
-else:
-	return(recursive_fibonacci(n-1) + recursive_fibonacci(n-2))
+	if n <= 1:
+		return n
+	else:
+		return(recursive_fibonacci(n-1) + recursive_fibonacci(n-2))
 
 n_terms = 10
 
 # check if the number of terms is valid
 if n_terms <= 0:
-print("Invalid input ! Please input a positive value")
+	print("Invalid input ! Please input a positive value")
 else:
-print("Fibonacci series:")
-for i in range(n_terms):
-	print(recursive_fibonacci(i))
+	print("Fibonacci series:")
+	for i in range(n_terms):
+		print(recursive_fibonacci(i))
 ```
 
 > Fibonacci series: <br/>
@@ -121,10 +122,10 @@ A parameter is the variable defined within the parentheses during function defin
 
 ```python
 # Here a,b are the parameters 
-def sum(a,b): 
-print(a+b) 
+def sum(a, b): 
+print(a + b) 
 	
-sum(1,2)
+sum(1, 2)
 ```
 
 > 3
@@ -134,11 +135,11 @@ sum(1,2)
 An argument is a value that is passed to a function when it is called. It might be a variable, value or object passed to a function or method as input. They are written when we are calling the function.
 
 ```python
-def sum(a,b): 
-print(a+b) 
+def sum(a, b): 
+print(a + b) 
 	
 # Here the values 1,2 are arguments 
-sum(1,2) 
+sum(1, 2) 
 ```
 
 > 3
@@ -151,29 +152,29 @@ Python functions can contain two types of arguments:
   Positional Arguments are needed to be included in proper order i.e the first argument is always listed first when the function is called, second argument needs to be called second and so on.
 
   ```python
-  def person_name(first_name,second_name):
-      print(first_name+second_name)
+  def person_name(first_name, second_name):
+      print(first_name + second_name)
 
-      # First name is Ram placed first
-      # Second name is Babu place second
-      person_name("Ram","Babu")
+  # First name is John placed first
+  # Second name is Smith place second
+  person_name("John", "Smith")
   ```
 
-  >  RamBabu
+  >  JohnSmith
 
 - Keyword Arguments
 
   Keyword Arguments is an argument passed to a function or method which is preceded by a keyword and an equal to sign. The order of keyword argument with respect to another keyword argument does not matter because the values are being explicitly assigned.
 
   ```python
-  def person_name(first_name,second_name):
-      print(first_name+second_name)
+  def person_name(first_name, second_name):
+      print(first_name + second_name)
 
-      # Here we are explicitly assigning the values
-      person_name(second_name="Babu",first_name="Ram")
+  # Here we are explicitly assigning the values
+  person_name(second_name = "John", first_name = "Smith")
   ```
 
-    >  RamBabu
+  >  JohnSmith
 
 **Function that takes parameters**
 
