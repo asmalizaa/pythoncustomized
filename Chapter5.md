@@ -175,30 +175,22 @@ session.commit()
 Execute another statement to retrieve all records.
 
 ```python
-result = session.execute(select([people]))
+result = session.query(User).all()
 for row in result:
-    print(row)
+    print("ID: {}".format(row.id))
+    print("Username: {}".format(row.username))
+    for post in row.posts:
+        print("ID Post: {}".format(post.id))
+        print("Title: {}".format(post.title))
+        print("Content: {}".format(post.content))
 ```
 
-You can streamline things a bit and perform multiple inserts by passing in a list of dictionaries of the field names and values for each insert:
+You can also use the select() method with a filter_by() method to find a particular record. In the example, you’re looking for any records in which the username column equals 'alice'.
 
 ```python
-result = session.execute(select([people]).where(people.c.name == 'Jill'))
-for row in result:
-    print(row)
-```
-
-You can also use the select() method with a where() method to find a particular
-record. In the example, you’re looking for any records in which the name column
-equals 'Jill'. Note that the where expression uses people.c.name, with the c
-indicating that name is a column in the people table:
-
-```python
-result = session.execute(people.update().values(count=20).where(people.c.name == 'Jill'))
-session.commit()
-result = session.execute(select([people]).where(people.c.name == 'Jill'))
-for row in result:
-    print(row)
+# Query data with filter
+result = session.query(User).filter_by(username="alice").first()
+print(f"User: {result.username}, Post: {result.posts[0].title}")
 ```
 
 ## 5.3 Python Web API with Flask
