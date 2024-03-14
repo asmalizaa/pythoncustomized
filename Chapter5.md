@@ -404,7 +404,7 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
    </form>
    ```
 
-5. Create a python file called models.py and add this codes.
+5. Create a python file called **models.py** and add this codes.
 
    ```python
    from flask_sqlalchemy import SQLAlchemy
