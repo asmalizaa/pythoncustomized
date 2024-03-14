@@ -122,7 +122,7 @@ Now you can think about connecting to the database:
 
 ```python
 # Create an SQLite database
-engine = create_engine("sqlite:///mydatabase2.db", echo=True)
+engine = create_engine("sqlite:///mydatabase.db", echo=True)
 
 Base = declarative_base()
 
