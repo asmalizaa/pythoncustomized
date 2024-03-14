@@ -362,7 +362,7 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
    </form>
    ```
 
-**datalist.html**
+   **datalist.html**
 
    ```html
    {% for employee in employees %}
@@ -370,7 +370,7 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
    {% endfor %}
    ```
 
-**data.html**
+   **data.html**
 
    ```html
    <h3>Id</h3>
@@ -383,7 +383,7 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
    <p>{{employee.position}}</p><hr>
    ```
 
-**update.html**
+   **update.html**
 
    ```html
    <form action='' method = "POST">
@@ -394,7 +394,7 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
    </form>
    ```
 
-**delete.html**
+   **delete.html**
  
    ```html
    <form action='' method="post">
