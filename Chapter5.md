@@ -319,19 +319,18 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
   		if employee:
   			db.session.delete(employee)
   			db.session.commit()
- 
-            name = request.form['name']
-            age = request.form['age']
-            position = request.form['position']
-            employee = EmployeeModel(employee_id=id, name=name, age=age, position = position)
- 
-            db.session.add(employee)
-            db.session.commit()
-            return redirect(f'/data/{id}')
-        return f"Employee with id = {id} Does not exist"
- 
-    return render_template('update.html', employee = employee)
-	```
+
+  			name = request.form['name']
+  			age = request.form['age']
+  			position = request.form['position']
+  			employee = EmployeeModel(employee_id=id, name=name, age=age, position = position)
+
+  			db.session.add(employee)
+  			db.session.commit()
+  			return redirect(f'/data/{id}')
+  		return f"Employee with id = {id} Does not exist"
+  	return render_template('update.html', employee = employee)
+  ```
 
  - Function to delete a record.
 
