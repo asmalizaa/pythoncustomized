@@ -272,7 +272,7 @@ Flask is a lightweight Python web framework that allows you to create web applic
      @app.route('/', methods=['POST'])
      def create():
      	# Handle POST request logic here
-     		return jsonify({'message': 'Resource created'})
+     	return jsonify({'message': 'Resource created'})
 
      @app.route('/', methods=['DELETE'])
      def delete():
