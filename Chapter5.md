@@ -113,42 +113,62 @@ First, you need to import the components you need to connect to the database and
 map a table to Python objects.
 
 ```python
-from sqlalchemy import create_engine, select, MetaData, Table, Column, Integer, String
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, relationship
 ```
 
 Now you can think about connecting to the database:
 
 ```python
-dbPath = 'datafile2.db'
-engine = create_engine('sqlite:///%s' % dbPath)
-metadata = MetaData(engine)
-people = Table('people', metadata, 
-        Column('id', Integer, primary_key=True),
-        Column('name', String),
-        Column('count', Integer),
-    )
+# Create an SQLite database
+engine = create_engine("sqlite:///mydatabase2.db", echo=True)
+
+Base = declarative_base()
+
+class User(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True)
+    username = Column(String, unique=True)
+    posts = relationship("Post", backref="author")
+
+class Post(Base):
+    __tablename__ = "posts"
+    id = Column(Integer, primary_key=True)
+    title = Column(String)
+    content = Column(String)
+    user_id = Column(Integer, ForeignKey("users.id"))
+
+Base.metadata.create_all(engine)
+```
+
+Before we start working with the database, we need to create session first.
+
+```python
+# Create a session
 Session = sessionmaker(bind=engine)
 session = Session()
-metadata.create_all(engine)
 ```
 
  When the table is created, the next step is inserting some records. 
 
 ```python
-people_ins = people.insert().values(name='Bob', count=1)
-str(people_ins)
-session.execute(people_ins)
+# Add data
+user1 = User(username="alice")
+post1 = Post(title="Hello, World!", content="My first post", author=user1)
+session.add(user1)
+session.add(post1)
 session.commit()
 ```
 
- Add another 2 records to the table.
+ Add another record to the table.
 
  ```python
-session.execute(people_ins, [
-            {'name': 'Jill', 'count':15},
-            {'name': 'Joe', 'count':10}
-            ])
+# Add data
+user2 = User(username="john")
+post2 = Post(title="Test Post", content="This is a test", author=user2)
+session.add(user2)
+session.add(post2)
 session.commit()
 ```
 
