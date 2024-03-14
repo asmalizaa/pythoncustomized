@@ -303,11 +303,11 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
    ```python
    @app.route('/data/<int:id>')
    def RetrieveSingleEmployee(id):
-   		employee = EmployeeModel.query.filter_by(employee_id=id).first()
-   		if employee:
-		   	return render_template('data.html', employee = employee)
-    	return f"Employee with id ={id} Does not exist"
-	```
+   	employee = EmployeeModel.query.filter_by(employee_id=id).first()
+   	if employee:
+   		return render_template('data.html', employee = employee)
+   return f"Employee with id ={id} Does not exist"
+   ```
 
 - Function to update a record.
 
