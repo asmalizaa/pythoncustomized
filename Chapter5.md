@@ -153,7 +153,7 @@ session = Session()
  When the table is created, the next step is inserting some records. 
 
 ```python
-# Add data
+# Add first data
 user1 = User(username="alice")
 post1 = Post(title="Hello, World!", content="My first post", author=user1)
 session.add(user1)
@@ -161,14 +161,23 @@ session.add(post1)
 session.commit()
 ```
 
- Add another record to the table.
+ Add another records to the table.
 
  ```python
-# Add data
+# Add second data
 user2 = User(username="john")
 post2 = Post(title="Test Post", content="This is a test", author=user2)
 session.add(user2)
 session.add(post2)
+session.commit()
+```
+
+```python
+# Add third data
+user3 = User(username="bob")
+post3 = Post(title="Test Post2", content="This is a test2", author=user3)
+session.add(user3)
+session.add(post3)
 session.commit()
 ```
 
@@ -191,6 +200,34 @@ You can also use the select() method with a filter_by() method to find a particu
 # Query data with filter
 result = session.query(User).filter_by(username="alice").first()
 print(f"User: {result.username}, Post: {result.posts[0].title}")
+```
+
+To delete record.
+
+```python
+# delete record from table
+user = session.query(User).get(1)
+session.delete(user)
+session.commit()
+```
+
+Update record.
+
+```python
+# update user record
+session.query(User).\
+    filter(User.username == "john").\
+    update({'username': "John Smith"})
+session.commit()
+```
+
+```python
+# update post record
+session.query(Post).\
+    filter(Post.id == 2).\
+    update({'title': "Python Programming", 
+            "content" : "Python Programming for PCEP"})
+session.commit()
 ```
 
 ## 5.3 Python Web API with Flask
