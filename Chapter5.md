@@ -234,13 +234,46 @@ session.commit()
 
 REST stands for REpresentational State Transfer and is an architectural style used in modern web development. It defines a set or rules/constraints for a web application to send and receive data. In this topic, we will build a REST API in Python using the Flask framework. 
 
-Flask is a lightweight Python web framework that allows you to create web applications and build RESTful APIs with ease. Let’s dive into creating a simple REST API using Flask:
+Let's try with a very simple Flask app for a start so that we can test it using client program Postman.
+
+```python
+#!/usr/bin/env python
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+	return jsonify({'message': 'Resource retrieved'})
+
+@app.route('/', methods=['POST'])
+def create():
+	# Handle POST request logic here
+	return jsonify({'message': 'Resource created'})
+
+@app.route('/', methods=['DELETE'])
+def delete():
+	# Handle DELETE request logic here
+	return jsonify({'message': 'Resource deleted'})
+
+@app.route('/', methods=['PUT'])
+def update():
+	# Handle PUT request logic here
+	return jsonify({'message': 'Resource updated'})
+
+if __name__ == '__main__':
+	app.run()
+```
+
+## 5.4 Python Web API Flask App for CRUD
+
+Flask is a lightweight Python web framework that allows you to create web applications and build RESTful APIs with ease. Let’s dive into creating a simple REST API to perform CRUD using Flask:
 
 Reference: (https://www.askpython.com/python-modules/flask/flask-crud-application)
 
 1. Setting Up Your Flask Project:
    - First, create a virtual environment for your project.
-   - Install Flask using pip install flask.
+   - Install Flask using pip install flask_sqlalchemy.
 
      ```python
      pip install flask_sqlalchemy
@@ -332,21 +365,20 @@ Reference: (https://www.askpython.com/python-modules/flask/flask-crud-applicatio
   	return render_template('update.html', employee = employee)
   ```
 
- - Function to delete a record.
+- Function to delete a record.
 
-   ```python
-   @app.route('/data/<int:id>/delete', methods=['GET','POST'])
-   def delete(id):
-   	employee = EmployeeModel.query.filter_by(employee_id=id).first()
-    if request.method == 'POST':
-        if employee:
-            db.session.delete(employee)
-            db.session.commit()
-            return redirect('/data')
-        abort(404)
- 
-    return render_template('delete.html')
-	```
+  ```python
+  @app.route('/data/<int:id>/delete', methods=['GET','POST'])
+  def delete(id):
+  	employee = EmployeeModel.query.filter_by(employee_id=id).first()
+  		if request.method == 'POST':
+  			if employee:
+  				db.session.delete(employee)
+  				db.session.commit()
+  				return redirect('/data')
+  			abort(404)
+  		return render_template('delete.html')
+  ```
 
 4. Create a folder called **templates** to store all the static pages to be rendered.
 
